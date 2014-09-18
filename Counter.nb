@@ -1,0 +1,114 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3777,        104]
+NotebookOptionsPosition[      3409,         86]
+NotebookOutlinePosition[      3769,        102]
+CellTagsIndexPosition[      3726,         99]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"depth", "=", "4"}], ";", 
+   RowBox[{"(*", 
+    RowBox[{"how", " ", "many", " ", "levels", " ", "of", " ", "vertice"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"dd", "=", 
+    RowBox[{"limbs", "=", "2"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"permutation", " ", "per", " ", 
+    RowBox[{"leval", "/", "number"}], " ", "of", " ", "edges", " ", "per", 
+    " ", "verticie"}], "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", "[", "1", "]"}], "=", "1"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Take", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"x", "[", 
+        RowBox[{"n", "+", "1"}], "]"}], "=", 
+       RowBox[{
+        RowBox[{"limbs", "*", 
+         RowBox[{"x", "[", "n", "]"}]}], "+", "1"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", "depth"}], "}"}]}], "]"}], ",", 
+    RowBox[{"-", "1"}]}], "]"}], "-", "1"}]}], "Input",
+ CellChangeTimes->{{3.620066057138524*^9, 3.620066070458232*^9}, {
+  3.620066208994746*^9, 3.6200663096911716`*^9}, {3.6200664062025146`*^9, 
+  3.620066422741838*^9}, {3.620066507332263*^9, 3.620066650468122*^9}, {
+  3.6200666930076227`*^9, 3.62006671912278*^9}, {3.62006680609346*^9, 
+  3.620066810418701*^9}, {3.62006692134836*^9, 3.620067098714017*^9}, {
+  3.620067141366049*^9, 3.62006714282343*^9}, {3.6200672026582212`*^9, 
+  3.620067268570294*^9}, {3.6200673136534233`*^9, 3.620067360062965*^9}, {
+  3.620067407019581*^9, 3.620067453521693*^9}, {3.620067501129992*^9, 
+  3.620067502129076*^9}, {3.6200675328756227`*^9, 3.620067568081217*^9}, {
+  3.620067714405998*^9, 3.620067724576408*^9}, {3.620067762477128*^9, 
+  3.620067763192992*^9}, {3.6200678230212393`*^9, 3.620067835288436*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{{3.6200671436120777`*^9, 3.620067151811077*^9}, {
+   3.6200672039562817`*^9, 3.620067269347316*^9}, {3.620067318580818*^9, 
+   3.6200673607391977`*^9}, {3.620067410723363*^9, 3.6200674542236032`*^9}, 
+   3.620067502674975*^9, {3.6200675475325527`*^9, 3.6200675757028646`*^9}, {
+   3.620067725367309*^9, 3.6200677294746237`*^9}, {3.620067832347158*^9, 
+   3.620067835904566*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "30", "}"}]], "Output",
+ CellChangeTimes->{{3.6200671436120777`*^9, 3.620067151811077*^9}, {
+   3.6200672039562817`*^9, 3.620067269347316*^9}, {3.620067318580818*^9, 
+   3.6200673607391977`*^9}, {3.620067410723363*^9, 3.6200674542236032`*^9}, 
+   3.620067502674975*^9, {3.6200675475325527`*^9, 3.6200675757028646`*^9}, {
+   3.620067725367309*^9, 3.6200677294746237`*^9}, {3.620067832347158*^9, 
+   3.620067835906652*^9}}]
+}, Open  ]]
+},
+WindowSize->{702, 707},
+WindowMargins->{{Automatic, -908}, {Automatic, -546}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1933, 44, 148, "Input"],
+Cell[2515, 68, 426, 6, 28, "Output"],
+Cell[2944, 76, 449, 7, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
