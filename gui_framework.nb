@@ -10,65 +10,336 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      2490,         95]
-NotebookOptionsPosition[      1843,         66]
-NotebookOutlinePosition[      2203,         82]
-CellTagsIndexPosition[      2160,         79]
+NotebookDataLength[     14396,        374]
+NotebookOptionsPosition[     13188,        331]
+NotebookOutlinePosition[     13807,        353]
+CellTagsIndexPosition[     13764,        350]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell[BoxData[
- RowBox[{"PopupMenu", "[", 
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DepthSelect", "=", " ", 
+  RowBox[{"Framed", "[", 
+   RowBox[{"Labeled", "[", 
+    RowBox[{
+     RowBox[{"PopupMenu", "[", 
+      RowBox[{
+       RowBox[{"Dynamic", "[", "depth", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}], "]"}], ",", 
+     "\"\<Depth\>\"", ",", " ", "Left"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"LimbSelect", "=", 
+  RowBox[{"Framed", "[", 
+   RowBox[{"Labeled", "[", 
+    RowBox[{
+     RowBox[{"PopupMenu", "[", 
+      RowBox[{
+       RowBox[{"Dynamic", "[", "limbs", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}], "]"}], ",", 
+     "\"\<Limbs\>\"", ",", " ", "Left"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x", "[", "1", "]"}], "=", "1"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-   RowBox[{"Dynamic", "[", "x", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Searches", "[", 
+     RowBox[{"generations_", ",", "offspring_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"Take", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"x", "[", 
+           RowBox[{"n", "+", "1"}], "]"}], "=", 
+          RowBox[{
+           RowBox[{"offspring", "*", 
+            RowBox[{"x", "[", "n", "]"}]}], "+", "1"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", "generations"}], "}"}]}], "]"}], ",", 
+       RowBox[{"-", "1"}]}], "]"}], "-", "1"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
+   RowBox[{"Searches", "[", 
+    RowBox[{"depth", ",", "limbs"}], "]"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SearchTerm", " ", "=", " ", 
+   RowBox[{"Framed", "[", 
+    RowBox[{"Labeled", "[", 
+     RowBox[{
+      RowBox[{"SearchTerm", "=", " ", 
+       RowBox[{"InputField", "[", 
+        RowBox[{"Dynamic", "[", "term", "]"}], "]"}]}], ",", 
+      "\"\<Search Term\>\"", ",", " ", "Left"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"HourSelect", "=", 
+   RowBox[{"Framed", "[", 
+    RowBox[{"Labeled", "[", 
+     RowBox[{
+      RowBox[{"PopupMenu", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "x", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}], "]"}], ",", 
+      "\"\<Hours\>\"", ",", " ", "Top"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Searches", "[", "a", "]"}], ",", 
    RowBox[{"{", 
-    RowBox[{"a", ",", "b", ",", "c", ",", "d"}], "}"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.620046888227598*^9, 3.620046977389686*^9}}],
+    RowBox[{"a", ",", "0", ",", "4"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6200490803816566`*^9, 3.620049239082614*^9}, {
+   3.620049279159628*^9, 3.620049283663129*^9}, 3.620049336514908*^9, {
+   3.62004939673376*^9, 3.62004962856992*^9}, {3.6200510979443502`*^9, 
+   3.6200512492653217`*^9}, {3.6200515790786133`*^9, 3.620051705234242*^9}, {
+   3.6200517483222113`*^9, 3.620051919487187*^9}, {3.620051955764784*^9, 
+   3.620051959731073*^9}, {3.620052027660595*^9, 3.6200520571472483`*^9}, {
+   3.620052138335514*^9, 3.620052157993155*^9}, {3.620052365916016*^9, 
+   3.620052366482869*^9}, {3.620052405811034*^9, 3.620052408318178*^9}, {
+   3.620052480136816*^9, 3.6200525564574347`*^9}, {3.620052684458148*^9, 
+   3.620052792163089*^9}, {3.6200533938026876`*^9, 3.6200533954505796`*^9}, {
+   3.6200534355331*^9, 3.620053487308135*^9}, {3.620053534550283*^9, 
+   3.6200535893719*^9}, {3.620053621301282*^9, 3.6200536500200577`*^9}, {
+   3.620053703506715*^9, 3.620053734003208*^9}, {3.620054705813205*^9, 
+   3.620054758954995*^9}, {3.6200663281341553`*^9, 3.620066337565172*^9}, 
+   3.620067904684702*^9, {3.6200682156457443`*^9, 3.6200682734062*^9}, {
+   3.620068316500841*^9, 3.620068356884219*^9}, {3.620068478735154*^9, 
+   3.62006849355488*^9}, 3.620068533437895*^9, {3.6200686290325212`*^9, 
+   3.620068675588746*^9}, {3.620068706246356*^9, 3.620068821716668*^9}, 
+   3.620069121532455*^9, {3.620069537149898*^9, 3.620069560287092*^9}}],
 
 Cell[BoxData[
- PopupMenuBox[Dynamic[$CellContext`x], {$CellContext`a->"a", $CellContext`b->
-  "b", $CellContext`c->"c", $CellContext`d->"d"}]], "Output",
- CellChangeTimes->{3.6200469782386312`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData["x"], "Input",
- CellChangeTimes->{3.620046311136498*^9}],
-
-Cell[BoxData["c"], "Output",
- CellChangeTimes->{{3.620046312503851*^9, 3.620046316603801*^9}, 
-   3.620046697506463*^9, {3.620046897250868*^9, 3.620046909940378*^9}}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData["dog"], "Input",
- CellChangeTimes->{{3.6200460667206497`*^9, 3.6200460675195923`*^9}}],
-
-Cell[BoxData["dog"], "Output",
- CellChangeTimes->{3.6200460686218653`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData["a"], "Input",
- CellChangeTimes->{{3.620045942123309*^9, 3.6200459422531357`*^9}, {
-  3.620046019798727*^9, 3.6200460208930407`*^9}}],
-
-Cell[BoxData["a"], "Output",
+ FrameBox[
+  TemplateBox[{PopupMenuBox[
+     Dynamic[$CellContext`depth], {1 -> "1", 2 -> "2", 3 -> "3", 4 -> "4"}],
+    "\"Depth\""},
+   "Labeled",
+   DisplayFunction->(GridBox[{{
+       ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"], 
+       TagBox[
+        ItemBox[
+         PaneBox[
+          TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+          BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+        "SkipImageSizeLevel"]}}, 
+     GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+     AutoDelete -> False, 
+     GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      BaselinePosition -> {1, 2}]& ),
+   InterpretationFunction->(RowBox[{"Labeled", "[", 
+      RowBox[{#, ",", #2, ",", "Left"}], "]"}]& )],
+  StripOnInput->False]], "Output",
  CellChangeTimes->{
-  3.620045943075179*^9, {3.620046021912801*^9, 3.620046032099156*^9}}]
+  3.620066338232211*^9, 3.620067935023781*^9, {3.620068221788797*^9, 
+   3.620068244061158*^9}, {3.6200683335062*^9, 3.620068357609705*^9}, 
+   3.6200685345864763`*^9, 3.620068677284313*^9, {3.6200687097871943`*^9, 
+   3.620068822266776*^9}, 3.620069561179521*^9}],
+
+Cell[BoxData[
+ FrameBox[
+  TemplateBox[{PopupMenuBox[
+     Dynamic[$CellContext`limbs], {1 -> "1", 2 -> "2", 3 -> "3", 4 -> "4"}],
+    "\"Limbs\""},
+   "Labeled",
+   DisplayFunction->(GridBox[{{
+       ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"], 
+       TagBox[
+        ItemBox[
+         PaneBox[
+          TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+          BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+        "SkipImageSizeLevel"]}}, 
+     GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+     AutoDelete -> False, 
+     GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      BaselinePosition -> {1, 2}]& ),
+   InterpretationFunction->(RowBox[{"Labeled", "[", 
+      RowBox[{#, ",", #2, ",", "Left"}], "]"}]& )],
+  StripOnInput->False]], "Output",
+ CellChangeTimes->{
+  3.620066338232211*^9, 3.620067935023781*^9, {3.620068221788797*^9, 
+   3.620068244061158*^9}, {3.6200683335062*^9, 3.620068357609705*^9}, 
+   3.6200685345864763`*^9, 3.620068677284313*^9, {3.6200687097871943`*^9, 
+   3.620068822266776*^9}, 3.6200695613621597`*^9}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{
+  3.620066338232211*^9, 3.620067935023781*^9, {3.620068221788797*^9, 
+   3.620068244061158*^9}, {3.6200683335062*^9, 3.620068357609705*^9}, 
+   3.6200685345864763`*^9, 3.620068677284313*^9, {3.6200687097871943`*^9, 
+   3.620068822266776*^9}, 3.620069561365131*^9}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   $CellContext`Searches[$CellContext`depth, $CellContext`limbs], 
+   StandardForm],
+  ImageSizeCache->{32., {2.375, 9.}}]], "Output",
+ CellChangeTimes->{
+  3.620066338232211*^9, 3.620067935023781*^9, {3.620068221788797*^9, 
+   3.620068244061158*^9}, {3.6200683335062*^9, 3.620068357609705*^9}, 
+   3.6200685345864763`*^9, 3.620068677284313*^9, {3.6200687097871943`*^9, 
+   3.620068822266776*^9}, 3.620069561367948*^9}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0, 4}}, Typeset`size$$ = {86., {2.4375, 9.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$12092$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`a$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$12092$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`Searches[$CellContext`a$$], 
+      "Specifications" :> {{$CellContext`a$$, 0, 4}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{247., {49., 54.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.620066338232211*^9, 3.620067935023781*^9, {3.620068221788797*^9, 
+   3.620068244061158*^9}, {3.6200683335062*^9, 3.620068357609705*^9}, 
+   3.6200685345864763`*^9, 3.620068677284313*^9, {3.6200687097871943`*^9, 
+   3.620068822266776*^9}, 3.620069561469355*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["depth"], "Input",
+ CellChangeTimes->{{3.620069513659577*^9, 3.6200695146503487`*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{{3.620069515793375*^9, 3.620069521924098*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6200695043761673`*^9, 3.620069504412109*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 2.84, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0, 4}}, Typeset`size$$ = {109., {2.4375, 9.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$7838$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`a$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$7838$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`Searches[$CellContext`a$$], 
+      "Specifications" :> {{$CellContext`a$$, 0, 4}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{247., {49., 54.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.620066338232211*^9, 3.620067935023781*^9, {3.620068221788797*^9, 
+   3.620068244061158*^9}, {3.6200683335062*^9, 3.620068357609705*^9}, 
+   3.6200685345864763`*^9, 3.620068677284313*^9, {3.6200687097871943`*^9, 
+   3.620068822592252*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "[", "1", "]"}], "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Do", "[", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"y", "[", 
+       RowBox[{"n", "+", "1"}], "]"}], "=", 
+      RowBox[{
+       RowBox[{"limbs", "*", 
+        RowBox[{"y", "[", "n", "]"}]}], "+", "1"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "depth"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"y", "[", "depth", "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.6200519380093527`*^9, 3.620051938537184*^9}, {
+  3.620052281458228*^9, 3.620052363442318*^9}, {3.620052412191571*^9, 
+  3.620052461639306*^9}, {3.6200528415366364`*^9, 3.620052862559569*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.620052462290722*^9, 3.6200528587922983`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\n"], "Input",
+ CellChangeTimes->{{3.620068954206007*^9, 3.620068954215164*^9}, {
+  3.620068987722855*^9, 3.6200689924482307`*^9}, {3.620069024249366*^9, 
+  3.620069096711377*^9}, {3.6200693646469107`*^9, 3.620069418877388*^9}, {
+  3.620069457568666*^9, 3.620069493153948*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   PopupMenuBox[
+    Dynamic[$CellContext`y], {$CellContext`a->"\<\"one\"\>", \
+$CellContext`b->"\<\"two\"\>", $CellContext`c->"\<\"three\"\>"}], ",", 
+   DynamicBox[ToBoxes[$CellContext`y, StandardForm],
+    ImageSizeCache->{8., {3., 6.}}]}], "}"}]], "Output",
+ CellChangeTimes->{3.620069419727601*^9, 3.62006946641669*^9}]
 }, Open  ]]
 },
-WindowSize->{740, 867},
-WindowMargins->{{Automatic, -944}, {Automatic, -392}},
+WindowSize->{1080, 1876},
+WindowMargins->{{Automatic, -1108}, {Automatic, 223}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
-StyleDefinitions->"Default.nb"
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData["Input"]]}, Visible -> False, FrontEndVersion -> 
+  "9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, 2013)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
 ]
 (* End of Notebook Content *)
 
@@ -82,24 +353,31 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 255, 6, 28, "Input"],
-Cell[837, 30, 197, 3, 74, "Output"]
+Cell[579, 22, 4061, 96, 199, "Input"],
+Cell[4643, 120, 1130, 25, 50, "Output"],
+Cell[5776, 147, 1132, 25, 50, "Output"],
+Cell[6911, 174, 313, 5, 28, "Output"],
+Cell[7227, 181, 454, 9, 28, "Output"],
+Cell[7684, 192, 1745, 36, 120, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1071, 38, 69, 1, 28, "Input"],
-Cell[1143, 41, 166, 2, 28, "Output"]
+Cell[9466, 233, 99, 1, 28, "Input"],
+Cell[9568, 236, 94, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1346, 48, 99, 1, 28, "Input"],
-Cell[1448, 51, 74, 1, 28, "Output"]
+Cell[9699, 242, 94, 1, 28, InheritFromParent],
+Cell[9796, 245, 1725, 36, 120, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1559, 57, 146, 2, 28, "Input"],
-Cell[1708, 61, 119, 2, 28, "Output"]
+Cell[11558, 286, 822, 20, 131, "Input"],
+Cell[12383, 308, 94, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12514, 314, 291, 4, 46, "Input"],
+Cell[12808, 320, 364, 8, 43, "Output"]
 }, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
