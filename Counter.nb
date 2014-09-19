@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      3777,        104]
-NotebookOptionsPosition[      3409,         86]
-NotebookOutlinePosition[      3769,        102]
-CellTagsIndexPosition[      3726,         99]
+NotebookDataLength[      8287,        214]
+NotebookOptionsPosition[      7952,        197]
+NotebookOutlinePosition[      8312,        213]
+CellTagsIndexPosition[      8269,        210]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,26 +21,27 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+  RowBox[{"DepthSelect", "=", 
+   RowBox[{"PopupMenu", "[", 
+    RowBox[{
+     RowBox[{"Dynamic", "[", "depth", "]"}], ",", 
+     RowBox[{"Range", "[", "10", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LimbSelect", "=", 
+   RowBox[{"PopupMenu", "[", 
+    RowBox[{
+     RowBox[{"Dynamic", "[", "limbs", "]"}], ",", 
+     RowBox[{"Range", "[", "10", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"depth", "=", "4"}], ";", 
-   RowBox[{"(*", 
-    RowBox[{"how", " ", "many", " ", "levels", " ", "of", " ", "vertice"}], 
-    "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"dd", "=", 
-    RowBox[{"limbs", "=", "2"}]}], ";"}], 
-  RowBox[{"(*", 
-   RowBox[{"permutation", " ", "per", " ", 
-    RowBox[{"leval", "/", "number"}], " ", "of", " ", "edges", " ", "per", 
-    " ", "verticie"}], "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+   RowBox[{"x", "[", "1", "]"}], "=", "1"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
-   RowBox[{"x", "[", "1", "]"}], "=", "1"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
+  RowBox[{"Searches", "[", 
+   RowBox[{"generations_", ",", "offspring_"}], "]"}], ":=", 
   RowBox[{"Take", "[", 
    RowBox[{
     RowBox[{"Table", "[", 
@@ -49,39 +50,149 @@ Cell[BoxData[{
        RowBox[{"x", "[", 
         RowBox[{"n", "+", "1"}], "]"}], "=", 
        RowBox[{
-        RowBox[{"limbs", "*", 
+        RowBox[{"offspring", "*", 
          RowBox[{"x", "[", "n", "]"}]}], "+", "1"}]}], ",", 
       RowBox[{"{", 
-       RowBox[{"n", ",", "depth"}], "}"}]}], "]"}], ",", 
-    RowBox[{"-", "1"}]}], "]"}], "-", "1"}]}], "Input",
- CellChangeTimes->{{3.620066057138524*^9, 3.620066070458232*^9}, {
-  3.620066208994746*^9, 3.6200663096911716`*^9}, {3.6200664062025146`*^9, 
-  3.620066422741838*^9}, {3.620066507332263*^9, 3.620066650468122*^9}, {
-  3.6200666930076227`*^9, 3.62006671912278*^9}, {3.62006680609346*^9, 
-  3.620066810418701*^9}, {3.62006692134836*^9, 3.620067098714017*^9}, {
-  3.620067141366049*^9, 3.62006714282343*^9}, {3.6200672026582212`*^9, 
-  3.620067268570294*^9}, {3.6200673136534233`*^9, 3.620067360062965*^9}, {
-  3.620067407019581*^9, 3.620067453521693*^9}, {3.620067501129992*^9, 
-  3.620067502129076*^9}, {3.6200675328756227`*^9, 3.620067568081217*^9}, {
-  3.620067714405998*^9, 3.620067724576408*^9}, {3.620067762477128*^9, 
-  3.620067763192992*^9}, {3.6200678230212393`*^9, 3.620067835288436*^9}}],
-
-Cell[BoxData["1"], "Output",
- CellChangeTimes->{{3.6200671436120777`*^9, 3.620067151811077*^9}, {
-   3.6200672039562817`*^9, 3.620067269347316*^9}, {3.620067318580818*^9, 
-   3.6200673607391977`*^9}, {3.620067410723363*^9, 3.6200674542236032`*^9}, 
-   3.620067502674975*^9, {3.6200675475325527`*^9, 3.6200675757028646`*^9}, {
-   3.620067725367309*^9, 3.6200677294746237`*^9}, {3.620067832347158*^9, 
-   3.620067835904566*^9}}],
+       RowBox[{"n", ",", "generations"}], "}"}]}], "]"}], ",", 
+    RowBox[{"-", "1"}]}], "]"}]}], "\n", 
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Deploy", "[", "\[IndentingNewLine]", 
+    RowBox[{"Style", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Grid", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Transpose", "[", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"Style", "[", 
+                RowBox[{
+                "\"\<Number of Generations\>\"", ",", "Brown", ",", "18"}], 
+                "]"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"Style", "[", 
+                RowBox[{
+                "\"\<Number of Offspring\>\"", ",", "Brown", ",", "18"}], 
+                "]"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"Style", "[", 
+                RowBox[{
+                "\"\<Required Searches\>\"", ",", "Black", ",", "18"}], 
+                "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{
+              "DepthSelect", ",", "\[IndentingNewLine]", "LimbSelect", ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{"Style", "[", 
+                RowBox[{
+                 RowBox[{"Framed", "[", 
+                  RowBox[{"Dynamic", "[", 
+                   RowBox[{"Searches", "[", 
+                    RowBox[{"depth", ",", "limbs"}], "]"}], "]"}], "]"}], ",",
+                  "Black", ",", "18"}], "]"}]}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Alignment", "\[Rule]", "Right"}]}], "]"}], ",", 
+        RowBox[{"ImageMargins", "\[Rule]", "10"}]}], "]"}], ",", 
+      RowBox[{"DefaultOptions", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"InputField", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"ContinuousAction", "\[Rule]", "True"}], "}"}]}], "}"}]}]}],
+      "]"}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6200490803816566`*^9, 3.620049239082614*^9}, {
+   3.620049279159628*^9, 3.620049283663129*^9}, 3.620049336514908*^9, {
+   3.62004939673376*^9, 3.62004962856992*^9}, {3.6200510979443502`*^9, 
+   3.6200512492653217`*^9}, {3.6200515790786133`*^9, 3.620051705234242*^9}, {
+   3.6200517483222113`*^9, 3.620051919487187*^9}, {3.620051955764784*^9, 
+   3.620051959731073*^9}, {3.620052027660595*^9, 3.6200520571472483`*^9}, {
+   3.620052138335514*^9, 3.620052157993155*^9}, {3.620052365916016*^9, 
+   3.620052366482869*^9}, {3.620052405811034*^9, 3.620052408318178*^9}, {
+   3.620052480136816*^9, 3.6200525564574347`*^9}, {3.620052684458148*^9, 
+   3.620052792163089*^9}, {3.6200533938026876`*^9, 3.6200533954505796`*^9}, {
+   3.6200534355331*^9, 3.620053487308135*^9}, {3.620053534550283*^9, 
+   3.6200535893719*^9}, {3.620053621301282*^9, 3.6200536500200577`*^9}, {
+   3.620053703506715*^9, 3.620053734003208*^9}, {3.620054705813205*^9, 
+   3.620054758954995*^9}, {3.6200663281341553`*^9, 3.620066337565172*^9}, 
+   3.620067904684702*^9, {3.6200682156457443`*^9, 3.6200682734062*^9}, {
+   3.620068316500841*^9, 3.620068356884219*^9}, {3.620068478735154*^9, 
+   3.62006849355488*^9}, 3.620068533437895*^9, {3.6200686290325212`*^9, 
+   3.620068675588746*^9}, {3.620068706246356*^9, 3.620068821716668*^9}, 
+   3.620069121532455*^9, {3.620069537149898*^9, 3.620069560287092*^9}, {
+   3.6200695969329*^9, 3.620069597480627*^9}, {3.620069674500702*^9, 
+   3.620069679155025*^9}, {3.620069776604864*^9, 3.620069816722542*^9}, {
+   3.620070578917705*^9, 3.6200705959475517`*^9}, {3.620071091412657*^9, 
+   3.620071102905692*^9}, {3.620071147708796*^9, 3.6200712247870893`*^9}, {
+   3.620076551344265*^9, 3.6200766379023943`*^9}, {3.620076681032132*^9, 
+   3.6200766897104597`*^9}}],
 
 Cell[BoxData[
- RowBox[{"{", "30", "}"}]], "Output",
- CellChangeTimes->{{3.6200671436120777`*^9, 3.620067151811077*^9}, {
-   3.6200672039562817`*^9, 3.620067269347316*^9}, {3.620067318580818*^9, 
-   3.6200673607391977`*^9}, {3.620067410723363*^9, 3.6200674542236032`*^9}, 
-   3.620067502674975*^9, {3.6200675475325527`*^9, 3.6200675757028646`*^9}, {
-   3.620067725367309*^9, 3.6200677294746237`*^9}, {3.620067832347158*^9, 
-   3.620067835906652*^9}}]
+ DynamicModuleBox[{}, 
+  TagBox[
+   StyleBox[
+    PanelBox[
+     TagBox[GridBox[{
+        {
+         StyleBox["\<\"Number of Generations\"\>",
+          StripOnInput->False,
+          LineColor->RGBColor[0.6, 0.4, 0.2],
+          FrontFaceColor->RGBColor[0.6, 0.4, 0.2],
+          BackFaceColor->RGBColor[0.6, 0.4, 0.2],
+          GraphicsColor->RGBColor[0.6, 0.4, 0.2],
+          FontSize->18,
+          FontColor->RGBColor[0.6, 0.4, 0.2]], 
+         PopupMenuBox[Dynamic[$CellContext`depth], {1->"1", 2->"2", 3->"3", 4->
+          "4", 5->"5", 6->"6", 7->"7", 8->"8", 9->"9", 10->"10"}]},
+        {
+         StyleBox["\<\"Number of Offspring\"\>",
+          StripOnInput->False,
+          LineColor->RGBColor[0.6, 0.4, 0.2],
+          FrontFaceColor->RGBColor[0.6, 0.4, 0.2],
+          BackFaceColor->RGBColor[0.6, 0.4, 0.2],
+          GraphicsColor->RGBColor[0.6, 0.4, 0.2],
+          FontSize->18,
+          FontColor->RGBColor[0.6, 0.4, 0.2]], 
+         PopupMenuBox[Dynamic[$CellContext`limbs], {1->"1", 2->"2", 3->"3", 4->
+          "4", 5->"5", 6->"6", 7->"7", 8->"8", 9->"9", 10->"10"}]},
+        {
+         StyleBox["\<\"Required Searches\"\>",
+          StripOnInput->False,
+          LineColor->GrayLevel[0],
+          FrontFaceColor->GrayLevel[0],
+          BackFaceColor->GrayLevel[0],
+          GraphicsColor->GrayLevel[0],
+          FontSize->18,
+          FontColor->GrayLevel[0]], 
+         StyleBox[
+          FrameBox[
+           DynamicBox[ToBoxes[
+             $CellContext`Searches[$CellContext`depth, $CellContext`limbs], 
+             StandardForm],
+            ImageSizeCache->{35., {3., 14.}}],
+           StripOnInput->False],
+          StripOnInput->False,
+          LineColor->GrayLevel[0],
+          FrontFaceColor->GrayLevel[0],
+          BackFaceColor->GrayLevel[0],
+          GraphicsColor->GrayLevel[0],
+          FontSize->18,
+          FontColor->GrayLevel[0]]}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{"Columns" -> {{Right}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"],
+     ImageMargins->10],
+    StripOnInput->False,
+    InputFieldBoxOptions->{ContinuousAction->True}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.62007122997123*^9, {3.6200765653570843`*^9, 3.620076639206568*^9}, 
+   3.620076690864147*^9}]
 }, Open  ]]
 },
 WindowSize->{702, 707},
@@ -102,13 +213,11 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 1933, 44, 148, "Input"],
-Cell[2515, 68, 426, 6, 28, "Output"],
-Cell[2944, 76, 449, 7, 28, "Output"]
+Cell[579, 22, 4958, 106, 369, "Input"],
+Cell[5540, 130, 2396, 64, 176, "Output"]
 }, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
