@@ -10,14 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     14785,        398]
-NotebookOptionsPosition[     14527,        384]
-NotebookOutlinePosition[     14883,        400]
-CellTagsIndexPosition[     14840,        397]
+NotebookDataLength[     18542,        501]
+NotebookOptionsPosition[     18208,        484]
+NotebookOutlinePosition[     18564,        500]
+CellTagsIndexPosition[     18521,        497]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -205,7 +207,9 @@ perpage=5000&window=realtime&sort=date&apikey=\
         RowBox[{"List", "[", "word", "]"}]}]}], ";", " ", 
       RowBox[{"(*", 
        RowBox[{"put", " ", "initial", " ", "hashtag", " ", "here"}], "*)"}], 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"reps", "=", 
+       RowBox[{"n", "+", "1"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"PREFIX", "=", "HT"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{
@@ -377,10 +381,106 @@ perpage=5000&window=realtime&sort=date&apikey=\
        RowBox[{"\"\<Go Bitch\>\"", ",", 
         RowBox[{"Crawl", "[", "SearchTerm", "]"}], ",", 
         RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}]}], "]"}], ",", 
-      RowBox[{"ProgressIndicator", "[", 
-       RowBox[{"Dynamic", "[", 
-        RowBox[{"n", "/", "searches"}], "]"}], "]"}]}], "\[IndentingNewLine]",
-      "}"}], "\[IndentingNewLine]", ",", "Center"}], "]"}], "]"}]}], "Input"]
+      "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"ProgressIndicator", "[", 
+        RowBox[{"Dynamic", "[", 
+         RowBox[{"reps", "/", "searches"}], "]"}], "]"}], "]"}]}], 
+     "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", ",", "Center"}], 
+   "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.620325396791976*^9, 3.620325412004221*^9}, {
+  3.620325484940763*^9, 3.620325535946347*^9}, {3.6203255673732452`*^9, 
+  3.620325570572485*^9}, {3.620325798668064*^9, 3.620325934580501*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      TagBox[GridBox[{
+         {
+          StyleBox["\<\"Search Term\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.6, 0.4, 0.2],
+           FrontFaceColor->RGBColor[0.6, 0.4, 0.2],
+           BackFaceColor->RGBColor[0.6, 0.4, 0.2],
+           GraphicsColor->RGBColor[0.6, 0.4, 0.2],
+           FontSize->18,
+           FontColor->RGBColor[0.6, 0.4, 0.2]], 
+          InputFieldBox[Dynamic[$CellContext`SearchTerm], String]},
+         {
+          StyleBox["\<\"Number of Generations\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.6, 0.4, 0.2],
+           FrontFaceColor->RGBColor[0.6, 0.4, 0.2],
+           BackFaceColor->RGBColor[0.6, 0.4, 0.2],
+           GraphicsColor->RGBColor[0.6, 0.4, 0.2],
+           FontSize->18,
+           FontColor->RGBColor[0.6, 0.4, 0.2]], 
+          
+          PopupMenuBox[Dynamic[$CellContext`depth], {1->"1", 2->"2", 3->"3", 
+           4->"4", 5->"5", 6->"6", 7->"7", 8->"8", 9->"9", 10->"10"}]},
+         {
+          StyleBox["\<\"Number of Offspring\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.6, 0.4, 0.2],
+           FrontFaceColor->RGBColor[0.6, 0.4, 0.2],
+           BackFaceColor->RGBColor[0.6, 0.4, 0.2],
+           GraphicsColor->RGBColor[0.6, 0.4, 0.2],
+           FontSize->18,
+           FontColor->RGBColor[0.6, 0.4, 0.2]], 
+          
+          PopupMenuBox[Dynamic[$CellContext`limbs], {1->"1", 2->"2", 3->"3", 
+           4->"4", 5->"5", 6->"6", 7->"7", 8->"8", 9->"9", 10->"10"}]},
+         {
+          StyleBox["\<\"Required Searches\"\>",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->18,
+           FontColor->GrayLevel[0]], 
+          StyleBox[
+           FrameBox[
+            DynamicBox[
+             ToBoxes[$CellContext`searches = \
+$CellContext`Searches[$CellContext`depth, $CellContext`limbs], StandardForm],
+             ImageSizeCache->{11., {1., 11.}}],
+            StripOnInput->False],
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->18,
+           FontColor->GrayLevel[0]]}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]},
+     {
+      ButtonBox["\<\"Go Bitch\"\>",
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`Crawl[$CellContext`SearchTerm],
+       Evaluator->Automatic,
+       Method->"Queued"]},
+     {
+      DynamicBox[ToBoxes[
+        ProgressIndicator[
+         Dynamic[$CellContext`reps/$CellContext`searches]], StandardForm],
+       ImageSizeCache->{200., {5., 11.}}]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Center}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"],
+  Deploy,
+  DefaultBaseStyle->"Deploy"]], "Output",
+ CellChangeTimes->{
+  3.620325312598371*^9, 3.620325538556938*^9, {3.620325861672085*^9, 
+   3.620325887611025*^9}, 3.6203259375718803`*^9}]
+}, Open  ]]
 },
 WindowSize->{740, 871},
 WindowMargins->{{442, Automatic}, {Automatic, 0}},
@@ -399,7 +499,10 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 13966, 362, 1593, "Input"]
+Cell[CellGroupData[{
+Cell[579, 22, 14324, 370, 1593, "Input"],
+Cell[14906, 394, 3286, 87, 217, "Output"]
+}, Open  ]]
 }
 ]
 *)
