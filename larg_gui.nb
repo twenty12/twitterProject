@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     19852,        527]
-NotebookOptionsPosition[     19518,        510]
-NotebookOutlinePosition[     19874,        526]
-CellTagsIndexPosition[     19831,        523]
+NotebookDataLength[     19874,        527]
+NotebookOptionsPosition[     19540,        510]
+NotebookOutlinePosition[     19896,        526]
+CellTagsIndexPosition[     19853,        523]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -466,7 +466,7 @@ Cell[BoxData[
              DynamicBox[
               ToBoxes[$CellContext`searches = \
 $CellContext`Searches[$CellContext`depth, $CellContext`limbs], StandardForm],
-              ImageSizeCache->{11., {0., 14.}}],
+              ImageSizeCache->{23., {1., 14.}}],
              StripOnInput->False],
             StripOnInput->False,
             LineColor->GrayLevel[0],
@@ -505,11 +505,11 @@ $CellContext`Searches[$CellContext`depth, $CellContext`limbs], StandardForm],
    3.620325887611025*^9}, 3.6203259375718803`*^9, 3.620326034711853*^9, 
    3.6203262146405888`*^9, 3.620326376750834*^9, 3.620326523037107*^9, 
    3.620327118262608*^9, 3.6203272357387533`*^9, 3.620327299311131*^9, 
-   3.6203273294884863`*^9}]
+   3.6203273294884863`*^9, 3.620380893960408*^9}]
 }, Open  ]]
 },
 WindowSize->{740, 871},
-WindowMargins->{{442, Automatic}, {Automatic, 0}},
+WindowMargins->{{443, Automatic}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -527,7 +527,7 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 15118, 384, 1678, "Input"],
-Cell[15700, 408, 3802, 99, 221, "Output"]
+Cell[15700, 408, 3824, 99, 221, "Output"]
 }, Open  ]]
 }
 ]

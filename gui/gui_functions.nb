@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     11367,        322]
-NotebookOptionsPosition[     11028,        305]
-NotebookOutlinePosition[     11388,        321]
-CellTagsIndexPosition[     11345,        318]
+NotebookDataLength[     12065,        336]
+NotebookOptionsPosition[     11726,        319]
+NotebookOutlinePosition[     12086,        335]
+CellTagsIndexPosition[     12043,        332]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -162,6 +162,17 @@ perpage=5000&window=realtime&sort=date&apikey=\
   RowBox[{
    RowBox[{"Crawl", "[", "word_", "]"}], ":=", 
    RowBox[{"Table", "[", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"Print", "[", "\"\<searches =\>\"", "]"}], ";", 
+      RowBox[{"Print", "[", "searches", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", "\"\<limbs = \>\"", "]"}], ";", 
+      RowBox[{"Print", "[", "limbs", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", "\"\<depth = \>\"", "]"}], ";", 
+      RowBox[{"Print", "[", "depth", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", "\"\<n = \>\"", "]"}], ";", 
+      RowBox[{"Print", "[", "n", "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{
       RowBox[{
@@ -173,7 +184,9 @@ perpage=5000&window=realtime&sort=date&apikey=\
         RowBox[{"List", "[", "word", "]"}]}]}], ";", " ", 
       RowBox[{"(*", 
        RowBox[{"put", " ", "initial", " ", "hashtag", " ", "here"}], "*)"}], 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"reps", "=", 
+       RowBox[{"n", "+", "0"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"PREFIX", "=", "HT"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{
@@ -300,7 +313,8 @@ perpage=5000&window=realtime&sort=date&apikey=\
         "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", ",", 
      RowBox[{"{", 
       RowBox[{"n", ",", "searches"}], "}"}]}], "]"}]}], ";"}]}], "Input",
- CellChangeTimes->{{3.620382668278212*^9, 3.620382683807308*^9}}]
+ CellChangeTimes->{{3.620382668278212*^9, 3.620382683807308*^9}, 
+   3.620383935986518*^9}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
@@ -322,7 +336,7 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 148, 3, 35, "Subsubsection"],
-Cell[730, 27, 10282, 275, 1117, "Input"]
+Cell[730, 27, 10980, 289, 1202, "Input"]
 }, Open  ]]
 }
 ]

@@ -10,50 +10,262 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      2137,         68]
-NotebookOptionsPosition[      1882,         54]
-NotebookOutlinePosition[      2238,         70]
-CellTagsIndexPosition[      2195,         67]
+NotebookDataLength[     10569,        287]
+NotebookOptionsPosition[     10120,        266]
+NotebookOutlinePosition[     10477,        282]
+CellTagsIndexPosition[     10434,        279]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["Panel for graph types.", "Subsubsection",
+ CellChangeTimes->{{3.6203831668945723`*^9, 3.6203832142756243`*^9}, {
+  3.6203833388461227`*^9, 3.62038335949179*^9}}],
+
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"SetPlot", " ", "=", " ", 
-   RowBox[{"Panel", "[", "\[IndentingNewLine]", 
-    RowBox[{"Column", "[", 
-     RowBox[{"{", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Row", "[", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"Style", "[", 
-           RowBox[{"\"\<Select Graph Plot Type:  \>\"", ",", " ", "18"}], 
-           "]"}], ",", "GPTypeSelect"}], "}"}], "]"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Dynamic", "[", 
-        RowBox[{"GPPlot", "[", "L", "]"}], "]"}]}], "\[IndentingNewLine]", 
-      "}"}], "]"}], "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"SetCPlot", " ", "=", " ", 
-  RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Refresher", "[", "NewTags_", "]"}], ":=", 
+    RowBox[{"Table", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"L", " ", "=", 
+       RowBox[{"DeleteDuplicates", "[", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"Drop", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Branch", "[", "HT", "]"}], "[", 
+            RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
+        "]"}]}], "\[IndentingNewLine]", ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"GTypeSelect", " ", "=", " ", 
+    RowBox[{"PopupMenu", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", "GType", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Modularity\>\"", ",", "\"\<Centrality\>\"", " ", ",", " ", 
+        "\"\<CliquePercolation\>\"", " ", ",", " ", "\"\<Hierarchical\>\"", 
+        ",", " ", "\"\<Spectral\>\""}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"GPTypeSelect", " ", "=", " ", 
+    RowBox[{"PopupMenu", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", "GPType", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<SpringElectricalEmbedding\>\"", ",", "\"\<SpringEmbedding\>\"", 
+        ",", "\"\<HighDimensionalEmbedding\>\"", ",", 
+        "\"\<CircularEmbedding\>\"", ",", "\"\<RandomEmbedding\>\"", ",", 
+        "\"\<LinearEmbedding\>\""}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"GFind", "[", "t_", "]"}], ":=", 
+    RowBox[{"FindGraphCommunities", "[", 
+     RowBox[{
+      RowBox[{"Graph", "[", "L", "]"}], ",", " ", 
+      RowBox[{"Method", "\[Rule]", " ", "t"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"GPPlot", "[", "gp_", "]"}], ":=", 
+    RowBox[{"GraphPlot", "[", 
+     RowBox[{"L", ",", 
+      RowBox[{"VertexLabeling", "\[Rule]", "\"\<True\>\""}], ",", " ", 
+      RowBox[{"ImageSize", "\[Rule]", "500"}], ",", 
+      RowBox[{"Method", "\[Rule]", "GPType"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"GPlot", "[", "p_", "]"}], ":=", 
+    RowBox[{"CommunityGraphPlot", "[", 
+     RowBox[{
+      RowBox[{"Graph", "[", "L", "]"}], ",", "p", ",", 
+      RowBox[{"CommunityLabels", "\[Rule]", 
+       RowBox[{"Take", "[", 
+        RowBox[{"p", ",", "All", ",", "1"}], "]"}]}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetBPlot", " ", "=", " ", 
+    RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+     RowBox[{"Column", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Row", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<Select Graph Plot Type:  \>\"", ",", " ", "18"}], 
+            "]"}], ",", "GPTypeSelect"}], "}"}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Dynamic", "[", 
+         RowBox[{"GPPlot", "[", "L", "]"}], "]"}]}], "\[IndentingNewLine]", 
+       "}"}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetCPlot", " ", "=", " ", 
+    RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+     RowBox[{"Column", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Row", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<Select Community Type:  \>\"", ",", " ", "18"}], 
+            "]"}], ",", "GTypeSelect"}], "}"}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Dynamic", "[", 
+         RowBox[{"GPlot", "[", 
+          RowBox[{"GFind", "[", "GType", "]"}], "]"}], "]"}]}], 
+       "\[IndentingNewLine]", "}"}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PlotRefresh", " ", "=", " ", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Refresh Plot\>\"", ",", " ", 
+     RowBox[{"Refresher", "[", "SearchTerm", "]"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"SetPlot", " ", "=", 
+  RowBox[{"Panel", "[", 
    RowBox[{"Column", "[", 
     RowBox[{"{", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"Row", "[", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"Style", "[", 
-          RowBox[{"\"\<Select Community Type:  \>\"", ",", " ", "18"}], "]"}],
-          ",", "GTypeSelect"}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"Dynamic", "[", 
-       RowBox[{"GPlot", "[", 
-        RowBox[{"GFind", "[", "GType", "]"}], "]"}], "]"}]}], 
-     "\[IndentingNewLine]", "}"}], "]"}], "]"}]}]}], "Input",
- CellChangeTimes->{{3.620382951639645*^9, 3.6203830005180883`*^9}}]
+      RowBox[{"SetterBar", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "PlotType", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"SetBPlot", "\[Rule]", "\"\<Basic Plots\>\""}], ",", 
+          RowBox[{"SetCPlot", "\[Rule]", "\"\<Community Plots\>\""}]}], 
+         "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", "PlotType", "]"}]}], "}"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.620382951639645*^9, 3.6203830005180883`*^9}, 
+   3.62038322075836*^9, {3.620383259514928*^9, 3.6203832632721577`*^9}, {
+   3.620383316826935*^9, 3.620383586561265*^9}, {3.620384497962427*^9, 
+   3.620384522370131*^9}, {3.620384808533649*^9, 3.6203848172042923`*^9}, {
+   3.620387857854648*^9, 3.620387860364933*^9}, 3.620388180898494*^9, {
+   3.620388430237245*^9, 3.62038844332585*^9}, {3.6203886028368177`*^9, 
+   3.620388636300048*^9}, {3.620389062693383*^9, 3.620389077547967*^9}, {
+   3.620389175693026*^9, 3.620389182243064*^9}, {3.620389476728817*^9, 
+   3.620389521468718*^9}}],
+
+Cell[BoxData[
+ ButtonBox["\<\"Refresh Plot\"\>",
+  Appearance->Automatic,
+  ButtonFunction:>$CellContext`Refresher[$CellContext`SearchTerm],
+  Evaluator->Automatic,
+  Method->"Preemptive"]], "Output",
+ CellChangeTimes->{
+  3.620384072480297*^9, {3.620384508461175*^9, 3.620384523088892*^9}, 
+   3.620387465298813*^9, {3.620387732152472*^9, 3.620387756859888*^9}, 
+   3.620387862266691*^9, 3.620388043357244*^9, 3.620388457710318*^9, {
+   3.6203886384698687`*^9, 3.620388644320394*^9}, 3.620389079031455*^9, 
+   3.620389368447844*^9, 3.620389525355917*^9}],
+
+Cell[BoxData[
+ PanelBox[
+  TagBox[GridBox[{
+     {
+      InterpretationBox[
+       StyleBox[GridBox[{
+          {
+           SetterBox[Dynamic[$CellContext`PlotType], {Panel[
+             Column[{
+               Row[{
+                 Style["Select Graph Plot Type:  ", 18], 
+                 PopupMenu[
+                  Dynamic[$CellContext`GPType], {
+                  "SpringElectricalEmbedding", "SpringEmbedding", 
+                   "HighDimensionalEmbedding", "CircularEmbedding", 
+                   "RandomEmbedding", "LinearEmbedding"}]}], 
+               Dynamic[
+                $CellContext`GPPlot[$CellContext`L]]}]]}, "\<\"Basic \
+Plots\"\>"], 
+           SetterBox[Dynamic[$CellContext`PlotType], {Panel[
+             Column[{
+               Row[{
+                 Style["Select Community Type:  ", 18], 
+                 PopupMenu[
+                  Dynamic[$CellContext`GType], {
+                  "Modularity", "Centrality", "CliquePercolation", 
+                   "Hierarchical", "Spectral"}]}], 
+               Dynamic[
+                $CellContext`GPlot[
+                 $CellContext`GFind[$CellContext`GType]]]}]]}, "\<\"Community \
+Plots\"\>"]}
+         },
+         BaselinePosition->{1, 1},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Deployed->True],
+       SetterBar[
+        Dynamic[$CellContext`PlotType], {Panel[
+           Column[{
+             Row[{
+               Style["Select Graph Plot Type:  ", 18], 
+               PopupMenu[
+                Dynamic[$CellContext`GPType], {
+                "SpringElectricalEmbedding", "SpringEmbedding", 
+                 "HighDimensionalEmbedding", "CircularEmbedding", 
+                 "RandomEmbedding", "LinearEmbedding"}]}], 
+             Dynamic[
+              $CellContext`GPPlot[$CellContext`L]]}]] -> "Basic Plots", 
+         Panel[
+           Column[{
+             Row[{
+               Style["Select Community Type:  ", 18], 
+               PopupMenu[
+                Dynamic[$CellContext`GType], {
+                "Modularity", "Centrality", "CliquePercolation", 
+                 "Hierarchical", "Spectral"}]}], 
+             Dynamic[
+              $CellContext`GPlot[
+               $CellContext`GFind[$CellContext`GType]]]}]] -> 
+         "Community Plots"}]]},
+     {
+      DynamicBox[ToBoxes[$CellContext`PlotType, StandardForm],
+       ImageSizeCache->{518., {133., 139.}}]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Left}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"]]], "Output",
+ CellChangeTimes->{
+  3.620384072480297*^9, {3.620384508461175*^9, 3.620384523088892*^9}, 
+   3.620387465298813*^9, {3.620387732152472*^9, 3.620387756859888*^9}, 
+   3.620387862266691*^9, 3.620388043357244*^9, 3.620388457710318*^9, {
+   3.6203886384698687`*^9, 3.620388644320394*^9}, 3.620389079031455*^9, 
+   3.620389368447844*^9, 3.620389525358341*^9}]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{740, 867},
-WindowMargins->{{Automatic, 90}, {Automatic, 57}},
+WindowSize->{687, 656},
+WindowMargins->{{65, Automatic}, {Automatic, 113}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -69,10 +281,16 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 1321, 32, 199, "Input"]
+Cell[CellGroupData[{
+Cell[579, 22, 167, 2, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[771, 28, 5583, 141, 692, "Input"],
+Cell[6357, 171, 555, 11, 43, "Output"],
+Cell[6915, 184, 3177, 78, 369, "Output"]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-

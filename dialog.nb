@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     18686,        508]
-NotebookOptionsPosition[     18149,        485]
-NotebookOutlinePosition[     18505,        501]
-CellTagsIndexPosition[     18462,        498]
+NotebookDataLength[     11984,        319]
+NotebookOptionsPosition[     11567,        300]
+NotebookOutlinePosition[     11929,        316]
+CellTagsIndexPosition[     11886,        313]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -77,57 +77,60 @@ Cell[BoxData[{
          RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
      "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"GTypeSelect", " ", "=", " ", 
-   RowBox[{"PopupMenu", "[", 
-    RowBox[{
-     RowBox[{"Dynamic", "[", "GType", "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<Modularity\>\"", ",", "\"\<Centrality\>\"", " ", ",", " ", 
-       "\"\<CliquePercolation\>\"", " ", ",", " ", "\"\<Hierarchical\>\"", 
-       ",", " ", "\"\<Spectral\>\""}], "}"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"GPTypeSelect", " ", "=", " ", 
-   RowBox[{"PopupMenu", "[", 
-    RowBox[{
-     RowBox[{"Dynamic", "[", "GPType", "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<SpringElectricalEmbedding\>\"", ",", "\"\<SpringEmbedding\>\"", 
-       ",", "\"\<HighDimensionalEmbedding\>\"", ",", 
-       "\"\<CircularEmbedding\>\"", ",", "\"\<RandomEmbedding\>\"", ",", 
-       "\"\<LinearEmbedding\>\""}], "}"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"GTypeSelect", " ", "=", " ", 
+    RowBox[{"PopupMenu", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", "GType", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Modularity\>\"", ",", "\"\<Centrality\>\"", " ", ",", " ", 
+        "\"\<CliquePercolation\>\"", " ", ",", " ", "\"\<Hierarchical\>\"", 
+        ",", " ", "\"\<Spectral\>\""}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"GFind", "[", "t_", "]"}], ":=", 
-   RowBox[{"FindGraphCommunities", "[", 
-    RowBox[{
-     RowBox[{"Graph", "[", "L", "]"}], ",", " ", 
-     RowBox[{"Method", "\[Rule]", " ", "t"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+   RowBox[{"GPTypeSelect", " ", "=", " ", 
+    RowBox[{"PopupMenu", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", "GPType", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<SpringElectricalEmbedding\>\"", ",", "\"\<SpringEmbedding\>\"", 
+        ",", "\"\<HighDimensionalEmbedding\>\"", ",", 
+        "\"\<CircularEmbedding\>\"", ",", "\"\<RandomEmbedding\>\"", ",", 
+        "\"\<LinearEmbedding\>\""}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"GPPlot", "[", "gp_", "]"}], ":=", 
-   RowBox[{"GraphPlot", "[", 
-    RowBox[{"L", ",", 
-     RowBox[{"VertexLabeling", "\[Rule]", "\"\<True\>\""}], ",", " ", 
-     RowBox[{"ImageSize", "\[Rule]", "800"}], ",", 
-     RowBox[{"Method", "\[Rule]", "GPType"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GFind", "[", "t_", "]"}], ":=", 
+    RowBox[{"FindGraphCommunities", "[", 
+     RowBox[{
+      RowBox[{"Graph", "[", "L", "]"}], ",", " ", 
+      RowBox[{"Method", "\[Rule]", " ", "t"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"GPPlot", "[", "gp_", "]"}], ":=", 
+    RowBox[{"GraphPlot", "[", 
+     RowBox[{"L", ",", 
+      RowBox[{"VertexLabeling", "\[Rule]", "\"\<True\>\""}], ",", " ", 
+      RowBox[{"ImageSize", "\[Rule]", "800"}], ",", 
+      RowBox[{"Method", "\[Rule]", "GPType"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
     RowBox[{"GPlot", "[", "p_", "]"}], ":=", 
     RowBox[{"CommunityGraphPlot", "[", 
      RowBox[{
-      RowBox[{"Graph", "[", "L", "]"}], ",", 
-      RowBox[{"FindGraphCommunities", "[", "g", "]"}], ",", 
+      RowBox[{"Graph", "[", "L", "]"}], ",", "p", ",", 
       RowBox[{"CommunityLabels", "\[Rule]", 
        RowBox[{"Take", "[", 
         RowBox[{"p", ",", "All", ",", "1"}], "]"}]}], ",", 
-      RowBox[{"ImageSize", "\[Rule]", "800"}]}], "]"}]}], ";"}], 
+      RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -196,295 +199,107 @@ Cell[BoxData[{
         "\[IndentingNewLine]", ",", "Center"}], "]"}], "]"}], "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"SetGraph", "=", 
-   RowBox[{"Panel", "[", "\[IndentingNewLine]", 
-    RowBox[{"Column", "[", 
-     RowBox[{"{", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Panel", "[", "\[IndentingNewLine]", 
-        RowBox[{"Column", "[", 
-         RowBox[{"{", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"Row", "[", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"Style", "[", 
-               RowBox[{"\"\<Select Graph Plot Type:  \>\"", ",", " ", "18"}], 
-               "]"}], ",", "GPTypeSelect"}], "}"}], "]"}], ",", 
-           "\[IndentingNewLine]", 
-           RowBox[{"Button", "[", 
-            RowBox[{"\"\<Plot It\>\"", ",", 
-             RowBox[{"YGGPlot", "=", 
-              RowBox[{"Dynamic", "[", 
-               RowBox[{"GPPlot", "[", "L", "]"}], "]"}]}]}], "]"}]}], 
-          "\[IndentingNewLine]", "}"}], "]"}], "]"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Graphics", "[", 
-        RowBox[{"YGPPlot", ",", " ", 
-         RowBox[{"ImageSize", "\[Rule]", "400"}]}], "]"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Panel", "[", "\[IndentingNewLine]", 
-        RowBox[{"Column", "[", 
-         RowBox[{"{", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"Row", "[", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"Style", "[", 
-               RowBox[{"\"\<Select Community Type:  \>\"", ",", " ", "18"}], 
-               "]"}], ",", "GTypeSelect"}], "}"}], "]"}], ",", 
-           "\[IndentingNewLine]", 
-           RowBox[{"Button", "[", 
-            RowBox[{"\"\<Plot It\>\"", ",", 
-             RowBox[{"Print", "[", 
-              RowBox[{"Dynamic", "[", 
-               RowBox[{"GPlot", "[", 
-                RowBox[{"GFind", "[", "GType", "]"}], "]"}], "]"}], "]"}]}], 
-            "]"}]}], "}"}], "]"}], "]"}]}], "}"}], "]"}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"CreateDialog", "[", 
-  RowBox[{"{", 
-   RowBox[{"SetSearch", ",", "SetGraph"}], "}"}], "]"}]}], "Input",
+  RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+   RowBox[{"Column", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Row", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Select Graph Plot Type:  \>\"", ",", " ", "18"}], 
+          "]"}], ",", "GPTypeSelect"}], "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"GPPlot", "[", "L", "]"}], "]"}]}], "\[IndentingNewLine]", 
+     "}"}], "]"}], "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+  RowBox[{"Column", "[", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Row", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<Select Community Type:  \>\"", ",", " ", "18"}], "]"}], 
+        ",", "GTypeSelect"}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Dynamic", "[", 
+      RowBox[{"GPlot", "[", 
+       RowBox[{"GFind", "[", "GType", "]"}], "]"}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], "]"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.620344348359715*^9, 3.620344374535892*^9}, {
    3.6203445566800137`*^9, 3.620344606490752*^9}, {3.6203447542127247`*^9, 
    3.6203447557401447`*^9}, 3.6203447888849897`*^9, {3.620344821404093*^9, 
    3.620344887761671*^9}, {3.6203449722516603`*^9, 3.620345002755035*^9}, {
    3.620345076834334*^9, 3.620345137824585*^9}, 3.620345543565859*^9, {
    3.620345759952718*^9, 3.620345825182246*^9}, {3.620345871388535*^9, 
-   3.6203459879119864`*^9}}],
+   3.6203459879119864`*^9}, {3.620381039102439*^9, 3.620381096229278*^9}, {
+   3.620381171220664*^9, 3.620381172206994*^9}, {3.620381779108594*^9, 
+   3.6203818165436573`*^9}, {3.620381869556128*^9, 3.620381881938744*^9}, 
+   3.6203821391396093`*^9, {3.620382276505291*^9, 3.620382388009501*^9}}],
 
 Cell[BoxData[
  PanelBox[
   TagBox[GridBox[{
      {
-      PanelBox[
-       TagBox[GridBox[{
-          {
-           
-           TemplateBox[{
-            StyleBox[
-             "\"Select Graph Plot Type:  \"", StripOnInput -> False, FontSize -> 
-              18],PopupMenuBox[
-              Dynamic[$CellContext`GPType], {
-              "SpringElectricalEmbedding" -> "\"SpringElectricalEmbedding\"", 
-               "SpringEmbedding" -> "\"SpringEmbedding\"", 
-               "HighDimensionalEmbedding" -> "\"HighDimensionalEmbedding\"", 
-               "CircularEmbedding" -> "\"CircularEmbedding\"", 
-               "RandomEmbedding" -> "\"RandomEmbedding\"", "LinearEmbedding" -> 
-               "\"LinearEmbedding\""}]},
-            "RowDefault"]},
-          {
-           ButtonBox["\<\"Plot It\"\>",
-            Appearance->Automatic,
-            ButtonFunction:>($CellContext`YGGPlot = Dynamic[
-               $CellContext`GPPlot[$CellContext`L]]),
-            Evaluator->Automatic,
-            Method->"Preemptive"]}
-         },
-         DefaultBaseStyle->"Column",
-         GridBoxAlignment->{"Columns" -> {{Left}}},
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Column"]]},
+      TemplateBox[{
+       StyleBox[
+        "\"Select Graph Plot Type:  \"", StripOnInput -> False, FontSize -> 
+         18],PopupMenuBox[
+         Dynamic[$CellContext`GPType], {
+         "SpringElectricalEmbedding" -> "\"SpringElectricalEmbedding\"", 
+          "SpringEmbedding" -> "\"SpringEmbedding\"", 
+          "HighDimensionalEmbedding" -> "\"HighDimensionalEmbedding\"", 
+          "CircularEmbedding" -> "\"CircularEmbedding\"", "RandomEmbedding" -> 
+          "\"RandomEmbedding\"", "LinearEmbedding" -> "\"LinearEmbedding\""}]},
+       "RowDefault"]},
      {
-      GraphicsBox[Global`YGPPlot,
-       ImageSize->400]},
-     {
-      PanelBox[
-       TagBox[GridBox[{
-          {
-           
-           TemplateBox[{
-            StyleBox[
-             "\"Select Community Type:  \"", StripOnInput -> False, FontSize -> 
-              18],PopupMenuBox[
-              Dynamic[$CellContext`GType], {
-              "Modularity" -> "\"Modularity\"", "Centrality" -> 
-               "\"Centrality\"", "CliquePercolation" -> 
-               "\"CliquePercolation\"", "Hierarchical" -> "\"Hierarchical\"", 
-               "Spectral" -> "\"Spectral\""}]},
-            "RowDefault"]},
-          {
-           ButtonBox["\<\"Plot It\"\>",
-            Appearance->Automatic,
-            ButtonFunction:>Print[
-              Dynamic[
-               $CellContext`GPlot[
-                $CellContext`GFind[$CellContext`GType]]]],
-            Evaluator->Automatic,
-            Method->"Preemptive"]}
-         },
-         DefaultBaseStyle->"Column",
-         GridBoxAlignment->{"Columns" -> {{Left}}},
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Column"]]}
+      DynamicBox[ToBoxes[
+        $CellContext`GPPlot[$CellContext`L], StandardForm],
+       ImageSizeCache->{500., {220., 225.}}]}
     },
     DefaultBaseStyle->"Column",
     GridBoxAlignment->{"Columns" -> {{Left}}},
     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
    "Column"]]], "Output",
- CellChangeTimes->{{3.6203459742551413`*^9, 3.620345989360444*^9}}],
-
-Cell[BoxData[
- TemplateBox[{FrontEndObject[
-    LinkObject["s5m_shm", 3, 1]],66,
-   "FrontEndObject[LinkObject[\"s5m_shm\", 3, 1]]","66","\"Untitled-23\""},
-  "NotebookObjectUnsaved"]], "Output",
- CellChangeTimes->{{3.6203459742551413`*^9, 3.620345990131611*^9}}]
-}, Open  ]],
-
-Cell[CellGroupData[{
+ CellChangeTimes->{
+  3.620381929976212*^9, {3.620382284646509*^9, 3.620382333905767*^9}, 
+   3.620382373086563*^9}],
 
 Cell[BoxData[
  PanelBox[
   TagBox[GridBox[{
      {
-      PanelBox[
-       TagBox[GridBox[{
-          {
-           
-           TemplateBox[{
-            StyleBox[
-             "\"Select Graph Plot Type:  \"", StripOnInput -> False, FontSize -> 
-              18],PopupMenuBox[
-              Dynamic[$CellContext`GPType], {
-              "SpringElectricalEmbedding" -> "\"SpringElectricalEmbedding\"", 
-               "SpringEmbedding" -> "\"SpringEmbedding\"", 
-               "HighDimensionalEmbedding" -> "\"HighDimensionalEmbedding\"", 
-               "CircularEmbedding" -> "\"CircularEmbedding\"", 
-               "RandomEmbedding" -> "\"RandomEmbedding\"", "LinearEmbedding" -> 
-               "\"LinearEmbedding\""}]},
-            "RowDefault"]},
-          {
-           ButtonBox["\<\"Plot It\"\>",
-            Appearance->Automatic,
-            ButtonFunction:>Print[
-              Dynamic[
-               $CellContext`GPPlot[$CellContext`L]]],
-            Evaluator->Automatic,
-            Method->"Preemptive"]}
-         },
-         DefaultBaseStyle->"Column",
-         GridBoxAlignment->{"Columns" -> {{Left}}},
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Column"]]},
+      TemplateBox[{
+       StyleBox[
+        "\"Select Community Type:  \"", StripOnInput -> False, FontSize -> 
+         18],PopupMenuBox[
+         Dynamic[$CellContext`GType], {
+         "Modularity" -> "\"Modularity\"", "Centrality" -> "\"Centrality\"", 
+          "CliquePercolation" -> "\"CliquePercolation\"", "Hierarchical" -> 
+          "\"Hierarchical\"", "Spectral" -> "\"Spectral\""}]},
+       "RowDefault"]},
      {
-      PanelBox[
-       TagBox[GridBox[{
-          {
-           
-           TemplateBox[{
-            StyleBox[
-             "\"Select Community Type:  \"", StripOnInput -> False, FontSize -> 
-              18],PopupMenuBox[
-              Dynamic[$CellContext`GType], {
-              "Modularity" -> "\"Modularity\"", "Centrality" -> 
-               "\"Centrality\"", "CliquePercolation" -> 
-               "\"CliquePercolation\"", "Hierarchical" -> "\"Hierarchical\"", 
-               "Spectral" -> "\"Spectral\""}]},
-            "RowDefault"]},
-          {
-           ButtonBox["\<\"Plot It\"\>",
-            Appearance->Automatic,
-            ButtonFunction:>Print[
-              Dynamic[
-               $CellContext`GPlot[
-                $CellContext`GFind[$CellContext`GType]]]],
-            Evaluator->Automatic,
-            Method->"Preemptive"]}
-         },
-         DefaultBaseStyle->"Column",
-         GridBoxAlignment->{"Columns" -> {{Left}}},
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Column"]]}
-    },
-    DefaultBaseStyle->"Column",
-    GridBoxAlignment->{"Columns" -> {{Left}}},
-    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-   "Column"]]], "Input",
- CellChangeTimes->{3.620345597975648*^9}],
-
-Cell[BoxData[
- PanelBox[
-  TagBox[GridBox[{
-     {
-      PanelBox[
-       TagBox[GridBox[{
-          {
-           
-           TemplateBox[{
-            StyleBox[
-             "\"Select Graph Plot Type:  \"", StripOnInput -> False, FontSize -> 
-              18],PopupMenuBox[
-              Dynamic[$CellContext`GPType], {
-              "SpringElectricalEmbedding" -> "\"SpringElectricalEmbedding\"", 
-               "SpringEmbedding" -> "\"SpringEmbedding\"", 
-               "HighDimensionalEmbedding" -> "\"HighDimensionalEmbedding\"", 
-               "CircularEmbedding" -> "\"CircularEmbedding\"", 
-               "RandomEmbedding" -> "\"RandomEmbedding\"", "LinearEmbedding" -> 
-               "\"LinearEmbedding\""}]},
-            "RowDefault"]},
-          {
-           ButtonBox["\<\"Plot It\"\>",
-            Appearance->Automatic,
-            ButtonFunction:>Print[
-              Dynamic[
-               $CellContext`GPPlot[$CellContext`L]]],
-            Evaluator->Automatic,
-            Method->"Preemptive"]}
-         },
-         DefaultBaseStyle->"Column",
-         GridBoxAlignment->{"Columns" -> {{Left}}},
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Column"]]},
-     {
-      PanelBox[
-       TagBox[GridBox[{
-          {
-           
-           TemplateBox[{
-            StyleBox[
-             "\"Select Community Type:  \"", StripOnInput -> False, FontSize -> 
-              18],PopupMenuBox[
-              Dynamic[$CellContext`GType], {
-              "Modularity" -> "\"Modularity\"", "Centrality" -> 
-               "\"Centrality\"", "CliquePercolation" -> 
-               "\"CliquePercolation\"", "Hierarchical" -> "\"Hierarchical\"", 
-               "Spectral" -> "\"Spectral\""}]},
-            "RowDefault"]},
-          {
-           ButtonBox["\<\"Plot It\"\>",
-            Appearance->Automatic,
-            ButtonFunction:>Print[
-              Dynamic[
-               $CellContext`GPlot[
-                $CellContext`GFind[$CellContext`GType]]]],
-            Evaluator->Automatic,
-            Method->"Preemptive"]}
-         },
-         DefaultBaseStyle->"Column",
-         GridBoxAlignment->{"Columns" -> {{Left}}},
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Column"]]}
+      DynamicBox[ToBoxes[
+        $CellContext`GPlot[
+         $CellContext`GFind[$CellContext`GType]], StandardForm],
+       ImageSizeCache->{500., {197., 201.}}]}
     },
     DefaultBaseStyle->"Column",
     GridBoxAlignment->{"Columns" -> {{Left}}},
     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
    "Column"]]], "Output",
- CellChangeTimes->{{3.620345129497603*^9, 3.620345138757938*^9}, 
-   3.6203455455336018`*^9, 3.620345598091647*^9}]
+ CellChangeTimes->{
+  3.620381929976212*^9, {3.620382284646509*^9, 3.620382333905767*^9}, 
+   3.6203823731238413`*^9}]
 }, Open  ]],
 
 Cell[BoxData["."], "Input",
  CellChangeTimes->{3.620345129413274*^9}]
 },
-WindowSize->{740, 867},
-WindowMargins->{{76, Automatic}, {Automatic, 24}},
+WindowSize->{1161, 950},
+WindowMargins->{{Automatic, -1120}, {Automatic, -112}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -501,15 +316,11 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 9382, 231, 998, "Input"],
-Cell[9964, 255, 2636, 71, 624, "Output"],
-Cell[12603, 328, 263, 5, 41, "Output"]
+Cell[579, 22, 8881, 217, 896, "Input"],
+Cell[9463, 241, 1062, 26, 509, "Output"],
+Cell[10528, 269, 951, 25, 462, "Output"]
 }, Open  ]],
-Cell[CellGroupData[{
-Cell[12903, 338, 2540, 69, 187, InheritFromParent],
-Cell[15446, 409, 2615, 70, 187, "Output"]
-}, Open  ]],
-Cell[18076, 482, 69, 1, 28, "Input"]
+Cell[11494, 297, 69, 1, 28, "Input"]
 }
 ]
 *)
