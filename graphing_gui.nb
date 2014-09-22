@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5151,        157]
-NotebookOptionsPosition[      4678,        135]
-NotebookOutlinePosition[      5035,        151]
-CellTagsIndexPosition[      4992,        148]
+NotebookDataLength[      8509,        239]
+NotebookOptionsPosition[      8028,        217]
+NotebookOutlinePosition[      8385,        233]
+CellTagsIndexPosition[      8342,        230]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,16 +23,15 @@ Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{
-   RowBox[{"g", "=", 
-    RowBox[{"Graph", "[", 
-     RowBox[{"DeleteDuplicates", "[", 
-      RowBox[{"Flatten", "[", 
-       RowBox[{"Drop", "[", 
+   RowBox[{"L", " ", "=", 
+    RowBox[{"DeleteDuplicates", "[", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Drop", "[", 
+       RowBox[{
         RowBox[{
-         RowBox[{
-          RowBox[{"Branch", "[", "HT", "]"}], "[", 
-          RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
-      "]"}], "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+         RowBox[{"Branch", "[", "HT", "]"}], "[", 
+         RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"GTypeSelect", " ", "=", " ", 
@@ -41,29 +40,70 @@ Cell[BoxData[{
       RowBox[{"Dynamic", "[", "GType", "]"}], ",", 
       RowBox[{"{", 
        RowBox[{
-       "\"\<Modularity\>\"", ",", " ", "\"\<Centrality\>\"", " ", ",", " ", 
+       "\"\<Modularity\>\"", ",", "\"\<Centrality\>\"", " ", ",", " ", 
         "\"\<CliquePercolation\>\"", " ", ",", " ", "\"\<Hierarchical\>\"", 
         ",", " ", "\"\<Spectral\>\""}], "}"}]}], "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GPTypeSelect", " ", "=", " ", 
+   RowBox[{"PopupMenu", "[", 
+    RowBox[{
+     RowBox[{"Dynamic", "[", "GPType", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<SpringElectricalEmbedding\>\"", ",", "\"\<SpringEmbedding\>\"", 
+       ",", "\"\<HighDimensionalEmbedding\>\"", ",", 
+       "\"\<CircularEmbedding\>\"", ",", "\"\<RandomEmbedding\>\"", ",", 
+       "\"\<LinearEmbedding\>\""}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
     RowBox[{"GFind", "[", "t_", "]"}], ":=", 
     RowBox[{"FindGraphCommunities", "[", 
-     RowBox[{"g", ",", " ", 
-      RowBox[{"Method", "\[Rule]", " ", 
-       RowBox[{"Dynamic", "[", "t", "]"}]}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Graph", "[", "L", "]"}], ",", " ", 
+      RowBox[{"Method", "\[Rule]", " ", "t"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"GPPlot", "[", "gp_", "]"}], ":=", 
+   RowBox[{"GraphPlot", "[", 
+    RowBox[{"L", ",", 
+     RowBox[{"VertexLabeling", "\[Rule]", "\"\<True\>\""}], ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", "800"}], ",", 
+     RowBox[{"Method", "\[Rule]", "GPType"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"GPlot", "[", "p_", "]"}], ":=", 
    RowBox[{"CommunityGraphPlot", "[", 
-    RowBox[{"g", ",", 
+    RowBox[{
+     RowBox[{"Graph", "[", "L", "]"}], ",", 
      RowBox[{"FindGraphCommunities", "[", "g", "]"}], ",", 
      RowBox[{"CommunityLabels", "\[Rule]", 
       RowBox[{"Take", "[", 
        RowBox[{"p", ",", "All", ",", "1"}], "]"}]}], ",", 
-     RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}]}], 
+     RowBox[{"ImageSize", "\[Rule]", "800"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+   RowBox[{"Column", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Row", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Select Graph Plot Type:  \>\"", ",", " ", "18"}], 
+          "]"}], ",", "GPTypeSelect"}], "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Button", "[", 
+       RowBox[{"\"\<Plot It\>\"", ",", 
+        RowBox[{"Print", "[", 
+         RowBox[{"Dynamic", "[", 
+          RowBox[{"GPPlot", "[", "L", "]"}], "]"}], "]"}]}], "]"}]}], 
+     "\[IndentingNewLine]", "}"}], "]"}], "]"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"Panel", "[", "\[IndentingNewLine]", 
   RowBox[{"Column", "[", 
@@ -81,15 +121,51 @@ Cell[BoxData[{
         RowBox[{"Dynamic", "[", 
          RowBox[{"GPlot", "[", 
           RowBox[{"GFind", "[", "GType", "]"}], "]"}], "]"}], "]"}]}], 
-      "]"}]}], "\[IndentingNewLine]", "}"}], "]"}], 
-  "]"}], "\[IndentingNewLine]"}], "Input",
+      "]"}]}], "\[IndentingNewLine]", "}"}], "]"}], "]"}]}], "Input",
  CellChangeTimes->{{3.620327663664356*^9, 3.620327689159422*^9}, {
    3.620327720423851*^9, 3.620327810652787*^9}, {3.620327856440187*^9, 
    3.620327882357226*^9}, {3.620327930226089*^9, 3.620328019110718*^9}, {
    3.620328121748432*^9, 3.6203281476949797`*^9}, 3.620328303882803*^9, {
    3.620328346481145*^9, 3.6203284342938004`*^9}, {3.6203285014075003`*^9, 
    3.620328589479734*^9}, {3.620330471608385*^9, 3.6203305958005743`*^9}, 
-   3.6203306333369627`*^9, {3.620330720146492*^9, 3.620330812000864*^9}}],
+   3.6203306333369627`*^9, {3.620330720146492*^9, 3.620330812000864*^9}, {
+   3.620341971420079*^9, 3.620342003626224*^9}, {3.620342046842556*^9, 
+   3.6203421090501547`*^9}, 3.620342230028157*^9, {3.620343025530298*^9, 
+   3.620343177065297*^9}, {3.6203434031334248`*^9, 3.62034340701501*^9}, {
+   3.620343641315617*^9, 3.6203439378048763`*^9}}],
+
+Cell[BoxData[
+ PanelBox[
+  TagBox[GridBox[{
+     {
+      TemplateBox[{
+       StyleBox[
+        "\"Select Graph Plot Type:  \"", StripOnInput -> False, FontSize -> 
+         18],PopupMenuBox[
+         Dynamic[$CellContext`GPType], {
+         "SpringElectricalEmbedding" -> "\"SpringElectricalEmbedding\"", 
+          "SpringEmbedding" -> "\"SpringEmbedding\"", 
+          "HighDimensionalEmbedding" -> "\"HighDimensionalEmbedding\"", 
+          "CircularEmbedding" -> "\"CircularEmbedding\"", "RandomEmbedding" -> 
+          "\"RandomEmbedding\"", "LinearEmbedding" -> "\"LinearEmbedding\""}]},
+       "RowDefault"]},
+     {
+      ButtonBox["\<\"Plot It\"\>",
+       Appearance->Automatic,
+       ButtonFunction:>Print[
+         Dynamic[
+          $CellContext`GPPlot[$CellContext`L]]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Left}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"]]], "Output",
+ CellChangeTimes->{3.620330812699726*^9, 3.620341942100504*^9, 
+  3.6203420103710537`*^9, 3.620342057831461*^9, 3.620342110220085*^9, 
+  3.6203422312097282`*^9, 3.620343179280116*^9, 3.620343900411716*^9, 
+  3.620343938368762*^9}],
 
 Cell[BoxData[
  PanelBox[
@@ -118,23 +194,29 @@ Cell[BoxData[
     GridBoxAlignment->{"Columns" -> {{Left}}},
     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
    "Column"]]], "Output",
- CellChangeTimes->{3.620330812699726*^9}]
-}, Open  ]],
+ CellChangeTimes->{3.620330812699726*^9, 3.620341942100504*^9, 
+  3.6203420103710537`*^9, 3.620342057831461*^9, 3.620342110220085*^9, 
+  3.6203422312097282`*^9, 3.620343179280116*^9, 3.620343900411716*^9, 
+  3.620343938373221*^9}],
 
 Cell[CellGroupData[{
 
-Cell[BoxData["p"], "Input",
- CellChangeTimes->{3.620330834049952*^9}],
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   $CellContext`GPPlot[$CellContext`L], StandardForm],
+  ImageSizeCache->{64., {2.25, 8.}}]], "Print",
+ CellChangeTimes->{3.620343945928344*^9}],
 
-Cell[BoxData["p"], "Output",
- CellChangeTimes->{3.620330837120551*^9}]
-}, Open  ]],
-
-Cell[BoxData["."], "Input",
- CellChangeTimes->{3.6203307598103743`*^9}]
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   $CellContext`GPPlot[$CellContext`L], StandardForm],
+  ImageSizeCache->{64., {2.25, 8.}}]], "Print",
+ CellChangeTimes->{3.620343947375997*^9}]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{740, 867},
-WindowMargins->{{Automatic, 356}, {42, Automatic}},
+WindowSize->{1014, 904},
+WindowMargins->{{310, Automatic}, {5, Automatic}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -151,14 +233,14 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 2862, 69, 318, "Input"],
-Cell[3444, 93, 965, 27, 91, "Output"]
-}, Open  ]],
+Cell[579, 22, 4610, 112, 437, "Input"],
+Cell[5192, 136, 1265, 31, 90, "Output"],
+Cell[6460, 169, 1154, 30, 90, "Output"],
 Cell[CellGroupData[{
-Cell[4446, 125, 69, 1, 28, "Input"],
-Cell[4518, 128, 70, 1, 28, "Output"]
-}, Open  ]],
-Cell[4603, 132, 71, 1, 28, "Input"]
+Cell[7639, 203, 179, 4, 21, "Print"],
+Cell[7821, 209, 179, 4, 21, "Print"]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
