@@ -1,0 +1,78 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2137,         68]
+NotebookOptionsPosition[      1882,         54]
+NotebookOutlinePosition[      2238,         70]
+CellTagsIndexPosition[      2195,         67]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetPlot", " ", "=", " ", 
+   RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Select Graph Plot Type:  \>\"", ",", " ", "18"}], 
+           "]"}], ",", "GPTypeSelect"}], "}"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"GPPlot", "[", "L", "]"}], "]"}]}], "\[IndentingNewLine]", 
+      "}"}], "]"}], "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"SetCPlot", " ", "=", " ", 
+  RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+   RowBox[{"Column", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Row", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Select Community Type:  \>\"", ",", " ", "18"}], "]"}],
+          ",", "GTypeSelect"}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"GPlot", "[", 
+        RowBox[{"GFind", "[", "GType", "]"}], "]"}], "]"}]}], 
+     "\[IndentingNewLine]", "}"}], "]"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.620382951639645*^9, 3.6203830005180883`*^9}}]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 90}, {Automatic, 57}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1321, 32, 199, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
