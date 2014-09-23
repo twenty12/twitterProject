@@ -10,39 +10,86 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      1748,         60]
-NotebookOptionsPosition[      1421,         43]
-NotebookOutlinePosition[      1780,         59]
-CellTagsIndexPosition[      1737,         56]
+NotebookDataLength[      3704,        107]
+NotebookOptionsPosition[      3376,         90]
+NotebookOutlinePosition[      3733,        106]
+CellTagsIndexPosition[      3690,        103]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"fs", "=", "20"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"select", " ", "size", " ", "of", " ", "fields"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SearchSize", " ", "=", " ", "14"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "size", " ", "of", " ", "text", " ", "for", " ", "search", " ", 
+    "settings"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SearchColor", " ", "=", " ", "Black"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "color", " ", "of", " ", "text", " ", "for", " ", "search", " ", 
+    "settings"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ProgressMessage", " ", "=", " ", "\"\<prog message\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PreMessage", "=", " ", "\"\<pre message\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ShowPlot", " ", "=", " ", 
+   RowBox[{"Dynamic", "[", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"reps", "\[Equal]", "0"}], ",", "PreMessage", ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"reps", "<", "searches"}], ",", " ", "ProgressMessage", ",", 
+        " ", "SetPlot"}], "]"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{"CreatePalette", "[", 
   RowBox[{
    RowBox[{"{", 
-    RowBox[{"SetQuery", ",", "SetPlot"}], "}"}], ",", 
+    RowBox[{"SetQuery", ",", "ShowPlot"}], "}"}], ",", 
    RowBox[{"WindowFloating", "\[Rule]", "False"}], ",", 
-   RowBox[{"WindowClickSelect", "\[Rule]", "True"}]}], "]"}]], "Input",
+   RowBox[{"WindowClickSelect", "\[Rule]", "True"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.620387590239053*^9, 3.620387607719819*^9}, {
   3.620387665009927*^9, 3.620387688858514*^9}, {3.620389466361104*^9, 
   3.6203894705088463`*^9}, {3.620389532151198*^9, 3.62038954627953*^9}, {
-  3.620389694374955*^9, 3.620389694589532*^9}}],
+  3.620389694374955*^9, 3.620389694589532*^9}, {3.620391256903842*^9, 
+  3.62039129132612*^9}, {3.620391637382431*^9, 3.620391638278062*^9}, {
+  3.620407053614935*^9, 3.620407099965735*^9}, {3.620411296526452*^9, 
+  3.620411368055928*^9}, {3.620411412388884*^9, 3.620411562550902*^9}}],
 
 Cell[BoxData[
  TemplateBox[{FrontEndObject[
-    LinkObject["ej2_shm", 3, 1]],74,
-   "FrontEndObject[LinkObject[\"ej2_shm\", 3, 1]]","74","\"Untitled-19\""},
+    LinkObject["ej2_shm", 3, 1]],105,
+   "FrontEndObject[LinkObject[\"ej2_shm\", 3, 1]]","105","\"Untitled-39\""},
   "NotebookObjectUnsaved"]], "Output",
- CellChangeTimes->{3.620387609134314*^9, 3.620387649001113*^9, 
-  3.620387690573557*^9, 3.620389551142539*^9}]
+ CellChangeTimes->{
+  3.620387609134314*^9, 3.620387649001113*^9, 3.620387690573557*^9, 
+   3.620389551142539*^9, {3.6203896987627707`*^9, 3.620389716562311*^9}, 
+   3.620391153358056*^9, {3.620391197228415*^9, 3.620391215586453*^9}, {
+   3.6203912700665483`*^9, 3.6203912970390453`*^9}, 3.620391399981797*^9, 
+   3.620391511992963*^9, {3.620391631492673*^9, 3.6203916511040154`*^9}, 
+   3.6204069523257*^9, 3.620407103236062*^9, {3.620407140553917*^9, 
+   3.620407168015643*^9}, 3.620407209949403*^9, 3.620407706929332*^9, 
+   3.620411144237689*^9, 3.620411565189423*^9}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
-WindowMargins->{{467, Automatic}, {-290, Automatic}},
+WindowMargins->{{Automatic, 97}, {-21, Automatic}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -59,8 +106,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 517, 10, 46, "Input"],
-Cell[1099, 34, 306, 6, 41, "Output"]
+Cell[579, 22, 2008, 50, 182, "Input"],
+Cell[2590, 74, 770, 13, 75, "Output"]
 }, Open  ]]
 }
 ]

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5550,        154]
-NotebookOptionsPosition[      5217,        137]
-NotebookOutlinePosition[      5573,        153]
-CellTagsIndexPosition[      5530,        150]
+NotebookDataLength[     15237,        381]
+NotebookOptionsPosition[     14717,        357]
+NotebookOutlinePosition[     15072,        373]
+CellTagsIndexPosition[     15029,        370]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,32 +24,103 @@ Cell["Panel for search parameters.", "Subsubsection",
  CellChangeTimes->{{3.62038313775779*^9, 3.620383149259523*^9}, 
    3.620383340149147*^9}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"SelectDepth", "=", 
    RowBox[{"PopupMenu", "[", 
     RowBox[{
      RowBox[{"Dynamic", "[", "depth", "]"}], ",", 
-     RowBox[{"Range", "[", "10", "]"}]}], "]"}]}], 
+     RowBox[{"Range", "[", "10", "]"}], ",", " ", 
+     RowBox[{"FieldSize", "\[Rule]", "fs"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"SelectLimbs", "=", 
    RowBox[{"PopupMenu", "[", 
     RowBox[{
      RowBox[{"Dynamic", "[", "limbs", "]"}], ",", 
-     RowBox[{"Range", "[", "10", "]"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"QueryTerm", " ", "=", " ", 
-   RowBox[{"InputField", "[", 
-    RowBox[{
-     RowBox[{"Dynamic", "[", "SearchTerm", "]"}], ",", "String"}], "]"}]}], 
+     RowBox[{"Range", "[", "10", "]"}], ",", " ", 
+     RowBox[{"FieldSize", "\[Rule]", "fs"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{
-    RowBox[{"x", "[", "1", "]"}], "=", "1"}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+   RowBox[{"QueryTerm", " ", "=", " ", 
+    RowBox[{"InputField", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", "SearchTerm", "]"}], ",", "String"}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Refresher", "[", "NewTags_", "]"}], ":=", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"L", " ", "=", 
+      RowBox[{"DeleteDuplicates", "[", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"Drop", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Branch", "[", "HT", "]"}], "[", 
+           RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
+       "]"}]}], "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RequiredSearches", " ", "=", " ", 
+   RowBox[{"Style", "[", 
+    RowBox[{
+     RowBox[{"Framed", "[", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"searches", "=", 
+        RowBox[{"Searches", "[", 
+         RowBox[{"depth", ",", "limbs"}], "]"}]}], "]"}], "]"}], ",", "Black",
+      ",", "18"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ProgressBar", " ", "=", " ", 
+   RowBox[{"Row", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+          RowBox[{
+          "\"\<Collecting Data for \>\"", "<>", "SearchTerm", "<>", 
+           "\"\<: \>\""}], ",", "Bold"}], "]"}], "]"}], ",", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"ProgressIndicator", "[", 
+         RowBox[{"Dynamic", "[", 
+          RowBox[{"reps", "/", "searches"}], "]"}], "]"}], "]"}]}], "}"}], 
+     ",", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"500", ",", "40"}], "}"}]}], ",", " ", 
+     RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"CompleteMessage", "[", "b_", "]"}], ":=", 
+   RowBox[{"Button", "[", 
+    RowBox[{
+     RowBox[{"\"\<Show data from \>\"", "<>", "b", "<>", "\"\<.\>\""}], ",", 
+     RowBox[{"Refresher", "[", "SearchTerm", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ProgressUpdater", " ", "=", " ", 
+    RowBox[{"Dynamic", "[", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"reps", "\[Equal]", "0"}], ",", "\"\<\>\"", ",", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"reps", "<", "searches"}], ",", " ", "ProgressBar", ",", " ", 
+         RowBox[{"CompleteMessage", "[", "SearchTerm", "]"}]}], "]"}]}], 
+      "]"}], "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", "[", "1", "]"}], "=", "1"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -79,64 +150,213 @@ Cell[BoxData[{
           RowBox[{"\"\<Twitter Networks\>\"", ",", "Bold", ",", "20"}], "]"}],
           ",", "\[IndentingNewLine]", 
          RowBox[{"Grid", "[", "\[IndentingNewLine]", 
-          RowBox[{"Transpose", "[", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"{", "\[IndentingNewLine]", 
-              RowBox[{
-               RowBox[{"Style", "[", 
-                RowBox[{"\"\<Search Term\>\"", ",", "Brown", ",", "18"}], 
-                "]"}], ",", "\[IndentingNewLine]", 
-               RowBox[{"Style", "[", 
-                RowBox[{
-                "\"\<Number of Generations\>\"", ",", "Brown", ",", "18"}], 
-                "]"}], ",", "\[IndentingNewLine]", 
-               RowBox[{"Style", "[", 
-                RowBox[{
-                "\"\<Number of Offspring\>\"", ",", "Brown", ",", "18"}], 
-                "]"}], ",", "\[IndentingNewLine]", 
-               RowBox[{"Style", "[", 
-                RowBox[{
-                "\"\<Required Searches\>\"", ",", "Black", ",", "18"}], 
-                "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-             RowBox[{"{", 
-              RowBox[{
-              "QueryTerm", ",", "\[IndentingNewLine]", "SelectDepth", ",", 
-               "\[IndentingNewLine]", "SelectLimbs", ",", 
-               "\[IndentingNewLine]", 
-               RowBox[{"Style", "[", 
-                RowBox[{
-                 RowBox[{"Framed", "[", 
-                  RowBox[{"Dynamic", "[", 
-                   RowBox[{"searches", "=", 
-                    RowBox[{"Searches", "[", 
-                    RowBox[{"depth", ",", "limbs"}], "]"}]}], "]"}], "]"}], 
-                 ",", "Black", ",", "18"}], "]"}]}], "}"}]}], "}"}], "]"}], 
-          "]"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-         RowBox[{"Button", "[", 
-          RowBox[{"\"\<Go Bitch\>\"", ",", 
-           RowBox[{"Crawl", "[", "SearchTerm", "]"}], ",", 
-           RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}]}], "]"}], ",", 
-         "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Transpose", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Search Term\>\"", ",", "SearchColor", ",", 
+                  "SearchSize"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Number of Generations\>\"", ",", "SearchColor", ",", 
+                  "SearchSize"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Number of Offspring\>\"", ",", "SearchColor", ",", 
+                  "SearchSize"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Required Searches\>\"", ",", "SearchColor", ",", 
+                  "SearchSize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{
+               "QueryTerm", ",", "SelectDepth", ",", "SelectLimbs", ",", 
+                "RequiredSearches"}], "}"}]}], "}"}], "]"}], ",", 
+           "\[IndentingNewLine]", "\[IndentingNewLine]", 
+           RowBox[{"ItemSize", "\[Rule]", "All"}], ",", 
+           RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", "\[IndentingNewLine]", 
          RowBox[{"Row", "[", 
-          RowBox[{"{", 
-           RowBox[{"\"\<Search Progress : \>\"", ",", 
-            RowBox[{"Dynamic", "[", 
-             RowBox[{"ProgressIndicator", "[", 
-              RowBox[{"Dynamic", "[", 
-               RowBox[{"reps", "/", "searches"}], "]"}], "]"}], "]"}]}], 
-           "}"}], "]"}]}], "\[IndentingNewLine]", "}"}], 
-       "\[IndentingNewLine]", ",", "Center"}], "]"}], "]"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]"}], "Input",
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"Button", "[", 
+             RowBox[{"\"\<Begin Search\>\"", ",", 
+              RowBox[{"Crawl", "[", "SearchTerm", "]"}], ",", 
+              RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}], ",", 
+              RowBox[{"ImageSize", "\[Rule]", "250"}]}], "]"}], "}"}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"500", ",", "25"}], "}"}]}], ",", 
+           RowBox[{"Alignment", "\[Rule]", "Right"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", "\[IndentingNewLine]", "ProgressUpdater"}], 
+        "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", ",", "Center"}], 
+      "]"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.620382703302376*^9, 3.620382707565584*^9}, {
-  3.620382748078513*^9, 3.620382841410967*^9}, {3.620382907020492*^9, 
-  3.620382915600244*^9}, {3.62038297025275*^9, 3.620382971506741*^9}, {
-  3.620383004188327*^9, 3.620383007350601*^9}, {3.620383102375722*^9, 
-  3.620383111289757*^9}, {3.62038762747847*^9, 3.620387639371364*^9}}]
+   3.620382748078513*^9, 3.620382841410967*^9}, {3.620382907020492*^9, 
+   3.620382915600244*^9}, {3.62038297025275*^9, 3.620382971506741*^9}, {
+   3.620383004188327*^9, 3.620383007350601*^9}, {3.620383102375722*^9, 
+   3.620383111289757*^9}, {3.62038762747847*^9, 3.620387639371364*^9}, {
+   3.620389320822153*^9, 3.620389322219982*^9}, {3.6203910786553164`*^9, 
+   3.620391116445443*^9}, {3.620391164725459*^9, 3.620391247620573*^9}, {
+   3.62039130675732*^9, 3.620391307157743*^9}, {3.620391356643445*^9, 
+   3.620391382094179*^9}, {3.620391449037342*^9, 3.6203915043729343`*^9}, 
+   3.620391625855959*^9, {3.620406964973466*^9, 3.620407041013496*^9}, {
+   3.62040713140553*^9, 3.620407204163629*^9}, {3.620407302949161*^9, 
+   3.620407344501487*^9}, {3.620407379875379*^9, 3.62040747062364*^9}, {
+   3.620407509452619*^9, 3.620407537208003*^9}, {3.6204075734764223`*^9, 
+   3.620407587666656*^9}, {3.620407637196734*^9, 3.620407697088325*^9}, {
+   3.62040781347311*^9, 3.620407833872665*^9}, {3.620407868500506*^9, 
+   3.620407907202663*^9}, {3.620407937940538*^9, 3.620407995708375*^9}, {
+   3.620408026476795*^9, 3.620408050666747*^9}, {3.620408082915842*^9, 
+   3.6204080848274393`*^9}, {3.620408148852936*^9, 3.620408328283679*^9}, {
+   3.6204089719017277`*^9, 3.620409191437413*^9}, {3.6204092614604673`*^9, 
+   3.6204092720026627`*^9}, {3.620409335564476*^9, 3.620409402731361*^9}, {
+   3.6204094340851717`*^9, 3.620409450795999*^9}, {3.620409545780765*^9, 
+   3.620409604824711*^9}, {3.62040965113307*^9, 3.6204097088447113`*^9}, {
+   3.620409751223392*^9, 3.620409872628169*^9}, {3.620409922494463*^9, 
+   3.620409983006181*^9}, {3.620410032923615*^9, 3.620410053443919*^9}, {
+   3.620410094479006*^9, 3.6204101431002827`*^9}, 3.6204101914052677`*^9, {
+   3.6204102372275476`*^9, 3.6204102420998487`*^9}, {3.6204103024196987`*^9, 
+   3.62041039572375*^9}, {3.6204105137436333`*^9, 3.6204106936632833`*^9}, {
+   3.620410723719494*^9, 3.620410729991013*^9}, {3.620410767239361*^9, 
+   3.620410812514956*^9}, {3.620410869647964*^9, 3.620410906279663*^9}, {
+   3.6204109766764307`*^9, 3.6204110250274763`*^9}, {3.620411065775812*^9, 
+   3.620411089343638*^9}, {3.620411235771131*^9, 3.620411259880836*^9}}],
+
+Cell[BoxData[
+ PanelBox[
+  TagBox[
+   TagBox[GridBox[{
+      {
+       StyleBox["\<\"Twitter Networks\"\>",
+        StripOnInput->False,
+        FontSize->20,
+        FontWeight->Bold]},
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"Style", "[", 
+            
+            RowBox[{"\<\"Search Term\"\>", ",", "SearchColor", ",", 
+             "SearchSize"}], "]"}], 
+           InputFieldBox[Dynamic[$CellContext`SearchTerm], String]},
+          {
+           RowBox[{"Style", "[", 
+            
+            RowBox[{"\<\"Number of Generations\"\>", ",", "SearchColor", ",", 
+             "SearchSize"}], "]"}], 
+           
+           PopupMenuBox[Dynamic[$CellContext`depth], {1->"1", 2->"2", 3->"3", 
+            4->"4", 5->"5", 6->"6", 7->"7", 8->"8", 9->"9", 10->"10"},
+            FieldSize->$CellContext`fs]},
+          {
+           RowBox[{"Style", "[", 
+            
+            RowBox[{"\<\"Number of Offspring\"\>", ",", "SearchColor", ",", 
+             "SearchSize"}], "]"}], 
+           
+           PopupMenuBox[Dynamic[$CellContext`limbs], {1->"1", 2->"2", 3->"3", 
+            4->"4", 5->"5", 6->"6", 7->"7", 8->"8", 9->"9", 10->"10"},
+            FieldSize->$CellContext`fs]},
+          {
+           RowBox[{"Style", "[", 
+            
+            RowBox[{"\<\"Required Searches\"\>", ",", "SearchColor", ",", 
+             "SearchSize"}], "]"}], 
+           StyleBox[
+            FrameBox[
+             
+             DynamicBox[
+              ToBoxes[$CellContext`searches = \
+$CellContext`Searches[$CellContext`depth, $CellContext`limbs], StandardForm],
+              ImageSizeCache->{11., {0., 13.}}],
+             StripOnInput->False],
+            StripOnInput->False,
+            LineColor->GrayLevel[0],
+            FrontFaceColor->GrayLevel[0],
+            BackFaceColor->GrayLevel[0],
+            GraphicsColor->GrayLevel[0],
+            FontSize->18,
+            FontColor->GrayLevel[0]]}
+         },
+         AutoDelete->False,
+         ColumnsEqual->True,
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxItemSize->{},
+         RowsEqual->True],
+        "Grid"]},
+      {
+       TemplateBox[{
+        ButtonBox[
+         "\"Begin Search\"", Appearance -> Automatic, 
+          ButtonFunction :> $CellContext`Crawl[$CellContext`SearchTerm], 
+          Evaluator -> Automatic, ImageSize -> 250, Method -> "Queued"]},
+        "Row",
+        DisplayFunction->(
+         PaneBox[#, Alignment -> Right, ImageSize -> {500, 25}]& ),
+        InterpretationFunction->(RowBox[{"Row", "[", 
+           RowBox[{
+             RowBox[{"{", #, "}"}], ",", 
+             RowBox[{"ImageSize", "\[Rule]", 
+               RowBox[{"{", 
+                 RowBox[{"500", ",", "25"}], "}"}]}], ",", 
+             RowBox[{"Alignment", "\[Rule]", "Right"}]}], "]"}]& )]},
+      {
+       DynamicBox[ToBoxes[
+         If[$CellContext`reps == 0, "", 
+          
+          If[$CellContext`reps < $CellContext`searches, \
+$CellContext`ProgressBar, 
+           $CellContext`CompleteMessage[$CellContext`SearchTerm]]], 
+         StandardForm],
+        ImageSizeCache->{158., {9.3, 16.7}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Column"],
+   Deploy,
+   DefaultBaseStyle->"Deploy"]]], "Output",
+ CellChangeTimes->{{3.6204078244715633`*^9, 3.620407834582098*^9}, {
+   3.620407888969689*^9, 3.620407907967949*^9}, {3.620407938511979*^9, 
+   3.6204080008749237`*^9}, {3.620408043845008*^9, 3.620408051125834*^9}, 
+   3.620408087886529*^9, {3.620408158392427*^9, 3.620408231999341*^9}, {
+   3.6204082722359257`*^9, 3.620408328781127*^9}, 3.620408984745652*^9, 
+   3.620409043581156*^9, {3.620409082268052*^9, 3.620409088487773*^9}, {
+   3.6204091421145782`*^9, 3.620409189492897*^9}, {3.620409381914516*^9, 
+   3.6204094033904953`*^9}, {3.6204094454032087`*^9, 3.6204094513821497`*^9}, 
+   3.620409566381674*^9, 3.6204096058559*^9, 3.62040965556536*^9, {
+   3.620409701003776*^9, 3.62040970969699*^9}, 3.620409782648628*^9, {
+   3.62040983689482*^9, 3.6204098732234383`*^9}, 3.620409985318548*^9, {
+   3.620410041392538*^9, 3.620410054393805*^9}, {3.620410105568824*^9, 
+   3.620410108334442*^9}, 3.620410146318864*^9, 3.620410192225074*^9, 
+   3.620410244483357*^9, 3.620410400259838*^9, {3.620410522550048*^9, 
+   3.620410580260494*^9}, 3.620410625578117*^9, 3.620410699934802*^9, 
+   3.620410822744631*^9, {3.620410883647202*^9, 3.62041090718008*^9}, 
+   3.620411025661508*^9, {3.6204111052709217`*^9, 3.620411129164011*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"reps", "=", "0"}]], "Input",
+ CellChangeTimes->{{3.620410115703249*^9, 3.6204101312179317`*^9}, {
+  3.620410175031355*^9, 3.62041018782115*^9}, {3.620410408726946*^9, 
+  3.620410409029117*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{{3.620410116887457*^9, 3.620410132278842*^9}, {
+   3.620410178530054*^9, 3.620410188294498*^9}, 3.6204104103910437`*^9}]
+}, Open  ]]
 }, Open  ]]
 },
-WindowSize->{740, 867},
-WindowMargins->{{28, Automatic}, {Automatic, 64}},
+WindowSize->{855, 874},
+WindowMargins->{{72, Automatic}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -154,7 +374,14 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 144, 2, 35, "Subsubsection"],
-Cell[726, 26, 4475, 108, 539, "Input"]
+Cell[CellGroupData[{
+Cell[748, 28, 8927, 200, 726, "Input"],
+Cell[9678, 230, 4586, 110, 259, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14301, 345, 217, 4, 28, "Input"],
+Cell[14521, 351, 168, 2, 28, "Output"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
