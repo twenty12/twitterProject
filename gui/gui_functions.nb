@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     12065,        336]
-NotebookOptionsPosition[     11726,        319]
-NotebookOutlinePosition[     12086,        335]
-CellTagsIndexPosition[     12043,        332]
+NotebookDataLength[     12378,        345]
+NotebookOptionsPosition[     11966,        325]
+NotebookOutlinePosition[     12326,        341]
+CellTagsIndexPosition[     12283,        338]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,6 +24,8 @@ Cell["\<\
 These functions are the back end of the search.\
 \>", "Subsubsection",
  CellChangeTimes->{{3.620382584525506*^9, 3.6203826416114817`*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -151,13 +153,12 @@ perpage=5000&window=realtime&sort=date&apikey=\
  RowBox[{
   RowBox[{
    RowBox[{
+    RowBox[{"Branch", "[", "AT", "]"}], "[", "1", "]"}], "=", 
+   RowBox[{
     RowBox[{
-     RowBox[{"Branch", "[", "AT", "]"}], "[", "1", "]"}], "=", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"Branch", "[", "HT", "]"}], "[", "1", "]"}], "=", 
-     RowBox[{"List", "[", "Null", "]"}]}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+     RowBox[{"Branch", "[", "HT", "]"}], "[", "1", "]"}], "=", 
+    RowBox[{"List", "[", "Null", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"reps", " ", "=", "\"\<nope\>\""}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"Crawl", "[", "word_", "]"}], ":=", 
@@ -314,7 +315,12 @@ perpage=5000&window=realtime&sort=date&apikey=\
      RowBox[{"{", 
       RowBox[{"n", ",", "searches"}], "}"}]}], "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.620382668278212*^9, 3.620382683807308*^9}, 
-   3.620383935986518*^9}]
+   3.620383935986518*^9, {3.6205048264523163`*^9, 3.620504838932254*^9}}],
+
+Cell[BoxData["\<\"nope\"\>"], "Output",
+ CellChangeTimes->{3.620504854614293*^9, 3.6205050307769327`*^9, 
+  3.6205066383420486`*^9}]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{740, 867},
@@ -336,7 +342,10 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 148, 3, 35, "Subsubsection"],
-Cell[730, 27, 10980, 289, 1202, "Input"]
+Cell[CellGroupData[{
+Cell[752, 29, 11051, 288, 1219, "Input"],
+Cell[11806, 319, 132, 2, 62, "Output"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
