@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     11789,        290]
-NotebookOptionsPosition[     11341,        269]
-NotebookOutlinePosition[     11699,        285]
-CellTagsIndexPosition[     11656,        282]
+NotebookDataLength[     13802,        316]
+NotebookOptionsPosition[     13470,        299]
+NotebookOutlinePosition[     13824,        315]
+CellTagsIndexPosition[     13781,        312]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -46,34 +46,39 @@ Cell[BoxData[{
    RowBox[{"QueryTerm", " ", "=", " ", 
     RowBox[{"InputField", "[", 
      RowBox[{
-      RowBox[{"Dynamic", "[", "SearchTerm", "]"}], ",", "String"}], "]"}]}], 
-   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", "SearchTerm", "]"}], ",", "String", ",", " ", 
+      RowBox[{"FieldSize", "\[Rule]", "fs"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"Refresher", "[", "NewTags_", "]"}], ":=", 
-   RowBox[{"Table", "[", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"L", " ", "=", 
-      RowBox[{"DeleteDuplicates", "[", 
-       RowBox[{"Flatten", "[", 
-        RowBox[{"Drop", "[", 
-         RowBox[{
+   RowBox[{
+    RowBox[{"Refresher", "[", "NewTags_", "]"}], ":=", 
+    RowBox[{"Table", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"L", " ", "=", 
+       RowBox[{"DeleteDuplicates", "[", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"Drop", "[", 
           RowBox[{
-           RowBox[{"Branch", "[", "HT", "]"}], "[", 
-           RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
-       "]"}]}], "\[IndentingNewLine]", ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "1"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Branch", "[", "HT", "]"}], "[", 
+            RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
+        "]"}]}], "\[IndentingNewLine]", ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"RequiredSearches", " ", "=", " ", 
-   RowBox[{"Style", "[", 
-    RowBox[{
-     RowBox[{"Framed", "[", 
-      RowBox[{"Dynamic", "[", 
-       RowBox[{"searches", "=", 
-        RowBox[{"Searches", "[", 
-         RowBox[{"depth", ",", "limbs"}], "]"}]}], "]"}], "]"}], ",", "Black",
-      ",", "18"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"RequiredSearches", " ", "=", " ", 
+    RowBox[{"InputField", "[", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"Dynamic", "[", 
+        RowBox[{"searches", "=", 
+         RowBox[{"Searches", "[", 
+          RowBox[{"depth", ",", "limbs"}], "]"}]}], "]"}], ",", "Red", ",", 
+       " ", "Bold"}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"ProgressBar", " ", "=", " ", 
@@ -173,41 +178,60 @@ Cell[BoxData[{
                 RowBox[{
                  RowBox[{"Style", "[", 
                   RowBox[{
-                  "\"\<Search Term\>\"", ",", "SearchColor", ",", 
+                  "\"\<Search Term:\>\"", ",", "SearchColor", ",", 
                    "SearchSize"}], "]"}], ",", "\[IndentingNewLine]", 
                  RowBox[{"Style", "[", 
                   RowBox[{
-                  "\"\<Number of Generations\>\"", ",", "SearchColor", ",", 
+                  "\"\<Number of Generations:\>\"", ",", "SearchColor", ",", 
                    "SearchSize"}], "]"}], ",", "\[IndentingNewLine]", 
                  RowBox[{"Style", "[", 
                   RowBox[{
-                  "\"\<Number of Offspring\>\"", ",", "SearchColor", ",", 
+                  "\"\<Number of Offspring:\>\"", ",", "SearchColor", ",", 
                    "SearchSize"}], "]"}], ",", "\[IndentingNewLine]", 
                  RowBox[{"Style", "[", 
                   RowBox[{
-                  "\"\<Required Searches\>\"", ",", "SearchColor", ",", 
-                   "SearchSize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]",
-                "\[IndentingNewLine]", 
+                  "\"\<Required Searches:\>\"", ",", "SearchColor", ",", 
+                   "SearchSize"}], "]"}], ",", "\[IndentingNewLine]", 
+                 "\"\<\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+               "\[IndentingNewLine]", 
                RowBox[{"{", 
                 RowBox[{
                 "QueryTerm", ",", "SelectDepth", ",", "SelectLimbs", ",", 
-                 "RequiredSearches"}], "}"}]}], "}"}], "]"}], ",", 
-            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                 "RequiredSearches", ",", 
+                 RowBox[{"Row", "[", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"Button", "[", 
+                    RowBox[{"\"\<Start Search\>\"", ",", 
+                    RowBox[{"Comb", "[", "SearchTerm", "]"}], ",", 
+                    RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}], ",", 
+                    RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}], "}"}],
+                    ",", 
+                   RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], 
+                "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                  "\"\<Include hashtag character. Ex: #YOLO\>\"", ",", 
+                   "ExplainColor", ",", "ExplainSize"}], "]"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                  "\"\<Height of tree.\>\"", ",", "ExplainColor", ",", 
+                   "ExplainSize"}], "]"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                  "\"\<Width of tree.\>\"", ",", "ExplainColor", ",", 
+                   "ExplainSize"}], "]"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                  "\"\<This output will effect total search time.\>\"", ",", 
+                   "ExplainColor", ",", "ExplainSize"}], "]"}], ",", 
+                 "\"\<\>\""}], "}"}]}], "\[IndentingNewLine]", "}"}], "]"}], 
+            ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
             RowBox[{"ItemSize", "\[Rule]", "All"}], ",", 
-            RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}], ",", 
-          "\[IndentingNewLine]", "\[IndentingNewLine]", 
-          RowBox[{"Row", "[", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"Button", "[", 
-              RowBox[{"\"\<Start Search\>\"", ",", 
-               RowBox[{"Comb", "[", "SearchTerm", "]"}], ",", 
-               RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}], ",", 
-               RowBox[{"ImageSize", "\[Rule]", "250"}]}], "]"}], "}"}], ",", 
-            RowBox[{"ImageSize", "\[Rule]", 
-             RowBox[{"{", 
-              RowBox[{"500", ",", "25"}], "}"}]}], ",", 
-            RowBox[{"Alignment", "\[Rule]", "Right"}]}], "]"}]}], 
+            RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}]}], 
          "\[IndentingNewLine]", "\[IndentingNewLine]", "}"}], 
         "\[IndentingNewLine]", ",", "Center"}], "]"}], "]"}], ",", 
      RowBox[{"Alignment", "\[Rule]", "Center"}], ",", 
@@ -251,24 +275,30 @@ Cell[BoxData[{
    3.620508534737925*^9, 3.620508571463931*^9}, {3.620508651147546*^9, 
    3.620508653425845*^9}, {3.620509194874317*^9, 3.620509195679956*^9}, {
    3.6205095129779663`*^9, 3.620509526960326*^9}, {3.620509670514287*^9, 
-   3.620509694644061*^9}, {3.6205097595536957`*^9, 3.62050976626377*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"reps", "=", "0"}]], "Input",
- CellChangeTimes->{{3.620410115703249*^9, 3.6204101312179317`*^9}, {
-  3.620410175031355*^9, 3.62041018782115*^9}, {3.620410408726946*^9, 
-  3.620410409029117*^9}}],
-
-Cell[BoxData["0"], "Output",
- CellChangeTimes->{{3.620410116887457*^9, 3.620410132278842*^9}, {
-   3.620410178530054*^9, 3.620410188294498*^9}, 3.6204104103910437`*^9}]
-}, Open  ]]
+   3.620509694644061*^9}, {3.6205097595536957`*^9, 3.62050976626377*^9}, {
+   3.620510437754939*^9, 3.6205104766967278`*^9}, {3.620510568760144*^9, 
+   3.6205105855346727`*^9}, {3.620510627912147*^9, 3.620510734230008*^9}, {
+   3.620510767213533*^9, 3.620510883423464*^9}, {3.6205109290254707`*^9, 
+   3.620510973135301*^9}, {3.620511040489953*^9, 3.620511043489601*^9}, {
+   3.620511075928111*^9, 3.620511117371295*^9}, {3.620511185613302*^9, 
+   3.620511208955678*^9}, {3.620516088115419*^9, 3.620516124165292*^9}, {
+   3.620516156877874*^9, 3.620516169939354*^9}, {3.6205162236154127`*^9, 
+   3.620516245340353*^9}, {3.620516291677219*^9, 3.6205162919073133`*^9}, {
+   3.620516346317361*^9, 3.6205163482072268`*^9}, {3.620516381709422*^9, 
+   3.6205164246869373`*^9}, {3.620516536221447*^9, 3.620516576124036*^9}, {
+   3.620516663669159*^9, 3.620516664891203*^9}, {3.620516698293315*^9, 
+   3.620516699548586*^9}, {3.620516746868099*^9, 3.620516752461849*^9}, {
+   3.620516840190132*^9, 3.620516930443883*^9}, {3.620517019269267*^9, 
+   3.620517160885952*^9}, {3.620517191549673*^9, 3.620517481781148*^9}, {
+   3.6205175171646757`*^9, 3.620517630027267*^9}, {3.620517702293264*^9, 
+   3.620517774889286*^9}, {3.620517807466761*^9, 3.620517829610623*^9}, {
+   3.620517921699992*^9, 3.620517998057703*^9}, {3.620518041048621*^9, 
+   3.62051818522464*^9}, 3.6205183668848877`*^9, {3.6205187551726217`*^9, 
+   3.6205187653133097`*^9}}]
 }, Open  ]]
 },
-WindowSize->{803, 835},
-WindowMargins->{{31, Automatic}, {-323, Automatic}},
+WindowSize->{867, 834},
+WindowMargins->{{8, Automatic}, {Automatic, 5}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -286,11 +316,7 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 144, 2, 35, "Subsubsection"],
-Cell[726, 26, 10174, 227, 794, "Input"],
-Cell[CellGroupData[{
-Cell[10925, 257, 217, 4, 28, "Input"],
-Cell[11145, 263, 168, 2, 28, "Output"]
-}, Open  ]]
+Cell[726, 26, 12728, 270, 896, "Input"]
 }, Open  ]]
 }
 ]

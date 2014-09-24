@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     12378,        345]
-NotebookOptionsPosition[     11966,        325]
-NotebookOutlinePosition[     12326,        341]
-CellTagsIndexPosition[     12283,        338]
+NotebookDataLength[     11743,        329]
+NotebookOptionsPosition[     11404,        312]
+NotebookOutlinePosition[     11765,        328]
+CellTagsIndexPosition[     11722,        325]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,8 +24,6 @@ Cell["\<\
 These functions are the back end of the search.\
 \>", "Subsubsection",
  CellChangeTimes->{{3.620382584525506*^9, 3.6203826416114817`*^9}}],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -153,27 +151,19 @@ perpage=5000&window=realtime&sort=date&apikey=\
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"Branch", "[", "AT", "]"}], "[", "1", "]"}], "=", 
-   RowBox[{
     RowBox[{
-     RowBox[{"Branch", "[", "HT", "]"}], "[", "1", "]"}], "=", 
-    RowBox[{"List", "[", "Null", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"reps", " ", "=", "\"\<nope\>\""}], "\[IndentingNewLine]", 
+     RowBox[{"Branch", "[", "AT", "]"}], "[", "1", "]"}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Branch", "[", "HT", "]"}], "[", "1", "]"}], "=", 
+     RowBox[{"List", "[", "Null", "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"reps", " ", "=", "\"\<nope\>\""}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"Crawl", "[", "word_", "]"}], ":=", 
    RowBox[{"Table", "[", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{"(*", 
-     RowBox[{
-      RowBox[{"Print", "[", "\"\<searches =\>\"", "]"}], ";", 
-      RowBox[{"Print", "[", "searches", "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", "\"\<limbs = \>\"", "]"}], ";", 
-      RowBox[{"Print", "[", "limbs", "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", "\"\<depth = \>\"", "]"}], ";", 
-      RowBox[{"Print", "[", "depth", "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", "\"\<n = \>\"", "]"}], ";", 
-      RowBox[{"Print", "[", "n", "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
-    "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{
       RowBox[{
@@ -315,16 +305,13 @@ perpage=5000&window=realtime&sort=date&apikey=\
      RowBox[{"{", 
       RowBox[{"n", ",", "searches"}], "}"}]}], "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.620382668278212*^9, 3.620382683807308*^9}, 
-   3.620383935986518*^9, {3.6205048264523163`*^9, 3.620504838932254*^9}}],
-
-Cell[BoxData["\<\"nope\"\>"], "Output",
- CellChangeTimes->{3.620504854614293*^9, 3.6205050307769327`*^9, 
-  3.6205066383420486`*^9}]
-}, Open  ]]
+   3.620383935986518*^9, {3.6205048264523163`*^9, 3.620504838932254*^9}, 
+   3.620508778335644*^9, {3.620510094102253*^9, 3.6205100953242693`*^9}, 
+   3.620518888846068*^9, {3.6205193763474827`*^9, 3.62051937855765*^9}}]
 }, Open  ]]
 },
-WindowSize->{740, 867},
-WindowMargins->{{Automatic, -784}, {Automatic, -545}},
+WindowSize->{996, 666},
+WindowMargins->{{Automatic, -1065}, {Automatic, -427}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -342,10 +329,7 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 148, 3, 35, "Subsubsection"],
-Cell[CellGroupData[{
-Cell[752, 29, 11051, 288, 1219, "Input"],
-Cell[11806, 319, 132, 2, 62, "Output"]
-}, Open  ]]
+Cell[730, 27, 10658, 282, 913, "Input"]
 }, Open  ]]
 }
 ]
