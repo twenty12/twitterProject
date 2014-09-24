@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     34198,        906]
-NotebookOptionsPosition[     33865,        889]
-NotebookOutlinePosition[     34222,        905]
-CellTagsIndexPosition[     34179,        902]
+NotebookDataLength[     39705,       1030]
+NotebookOptionsPosition[     39174,       1007]
+NotebookOutlinePosition[     39531,       1023]
+CellTagsIndexPosition[     39488,       1020]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -55,9 +55,8 @@ Cell[BoxData[{
          RowBox[{"ToString", "[", 
           RowBox[{"StringReplace", "[", 
            RowBox[{
-           "\"\<http://otter.topsy.com/search.js?q=\[Alpha]&language=en&\
-perpage=5000&window=realtime&sort=date&apikey=\
-09C43A9B270A470B8EB8F2946A9369F3\>\"", ",", 
+           "\"\<http://otter.topsy.com/search.js?q=\[Alpha]&perpage=5000&\
+window=realtime&sort=date&apikey=09C43A9B270A470B8EB8F2946A9369F3\>\"", ",", 
             RowBox[{"{", 
              RowBox[{"\"\<\[Alpha]\>\"", "\[Rule]", "x"}], "}"}]}], "]"}], 
           "]"}], ",", " ", 
@@ -367,7 +366,13 @@ perpage=5000&window=realtime&sort=date&apikey=\
       RowBox[{"VertexLabeling", "\[Rule]", "\"\<True\>\""}], ",", " ", 
       RowBox[{"ImageSize", "\[Rule]", "iw"}], ",", 
       RowBox[{"Method", "\[Rule]", "GPType"}], ",", 
-      RowBox[{"Background", "\[Rule]", "CWhite"}]}], "]"}]}], ";"}], 
+      RowBox[{"Background", "\[Rule]", "CWhite"}], ",", 
+      RowBox[{"PlotLabel", "\[Rule]", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"\"\<Graph Plot of \>\"", "<>", "SearchTerm"}], ",", "16", 
+         ",", "Black", ",", " ", "Bold"}], "]"}]}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -380,8 +385,13 @@ perpage=5000&window=realtime&sort=date&apikey=\
        RowBox[{"Take", "[", 
         RowBox[{"p", ",", "All", ",", "1"}], "]"}]}], ",", 
       RowBox[{"ImageSize", "\[Rule]", "iw"}], ",", 
-      RowBox[{"Background", "\[Rule]", "CWhite"}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+      RowBox[{"Background", "\[Rule]", "CWhite"}], ",", 
+      RowBox[{"PlotLabel", "\[Rule]", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"\"\<Community Graph Plot of \>\"", "<>", "SearchTerm"}], 
+         ",", "16", ",", "Black", ",", " ", "Bold"}], "]"}]}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"SetBPlot", " ", "=", " ", "\[IndentingNewLine]", 
@@ -727,12 +737,35 @@ perpage=5000&window=realtime&sort=date&apikey=\
          RowBox[{"reps", "<", "searches"}], ",", " ", "ProgressBar", ",", " ",
           "SetPlot"}], "]"}]}], "]"}], "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"Panel", "[", 
-  RowBox[{"Column", "[", 
-   RowBox[{"{", 
-    RowBox[{"SetQuery", ",", "ShowPlot"}], "}"}], "]"}], "]"}]}], "Input",
+ RowBox[{
+  RowBox[{"Panel", "[", 
+   RowBox[{"Column", "[", 
+    RowBox[{"{", 
+     RowBox[{"SetQuery", ",", "ShowPlot"}], "}"}], "]"}], "]"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", "***)"}]}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.620519370055585*^9, 3.6205193704621277`*^9}, {
-  3.620519400797183*^9, 3.620519478088969*^9}}],
+   3.620519400797183*^9, 3.620519478088969*^9}, {3.6205691013153543`*^9, 
+   3.6205691997506647`*^9}, {3.620569307695467*^9, 3.6205693205433598`*^9}, {
+   3.6205700943097963`*^9, 3.620570105977828*^9}, {3.6205701685672417`*^9, 
+   3.620570241055559*^9}, {3.620570327185882*^9, 3.620570336909974*^9}, {
+   3.6205703803593063`*^9, 3.620570396911866*^9}, {3.620570432039736*^9, 
+   3.620570438436048*^9}, {3.62057047417268*^9, 3.6205704994532633`*^9}, {
+   3.620570536344297*^9, 3.620570543732339*^9}, {3.620570591428611*^9, 
+   3.620570749943097*^9}, {3.620570796350687*^9, 3.620570799559949*^9}, {
+   3.620570829638845*^9, 3.620570890450954*^9}, {3.6205709485838003`*^9, 
+   3.620570965317984*^9}, {3.620571014487176*^9, 3.620571024039235*^9}, {
+   3.62057108067155*^9, 3.620571093468169*^9}, {3.6205711299007874`*^9, 
+   3.6205711888057632`*^9}, {3.620571228167735*^9, 3.620571268027473*^9}, {
+   3.62057130363789*^9, 3.620571351182527*^9}, {3.620571385407529*^9, 
+   3.6205713983239117`*^9}, {3.620571429030569*^9, 3.6205714704363823`*^9}, {
+   3.6205715010693293`*^9, 3.620571515412723*^9}, {3.620571823720757*^9, 
+   3.620571825245386*^9}, {3.620573520589422*^9, 3.620573570008054*^9}, {
+   3.620573619789316*^9, 3.620573627303383*^9}, {3.620573677423719*^9, 
+   3.620573693749413*^9}, {3.620575231408333*^9, 3.620575233053831*^9}, {
+   3.6205752858627996`*^9, 3.620575325365286*^9}, {3.6205754916403913`*^9, 
+   3.620575494638994*^9}, {3.620577314360072*^9, 3.620577430305497*^9}, {
+   3.620577530625024*^9, 3.620577549056567*^9}, 3.620577650174807*^9}],
 
 Cell[BoxData[
  PanelBox[
@@ -878,17 +911,102 @@ $CellContext`Comb[$CellContext`SearchTerm], Evaluator -> Automatic, ImageSize ->
         If[$CellContext`reps == "nope", $CellContext`PreMessage, 
          If[$CellContext`reps < $CellContext`searches, \
 $CellContext`ProgressBar, $CellContext`SetPlot]], StandardForm],
-       ImageSizeCache->{800., {174., 180.}}]}
+       ImageSizeCache->{800., {55., 61.}}]}
     },
     DefaultBaseStyle->"Column",
     GridBoxAlignment->{"Columns" -> {{Left}}},
     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
    "Column"]]], "Output",
- CellChangeTimes->{3.620519488775323*^9}]
-}, {2}]]
+ CellChangeTimes->{{3.6205774749384737`*^9, 3.620577488228117*^9}, 
+   3.6205776037416677`*^9, 3.62057765639758*^9, 3.620577792729189*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"FirstSearchTerm", " ", "=", " ", 
+    RowBox[{"List", "[", "SearchTerm", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"GraphList", "[", "SearchTerm", "]"}], "=", "L"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PopupList", "=", 
+    RowBox[{"List", "[", 
+     RowBox[{"\"\<Null\>\"", "\[Rule]", "\"\<drop\>\""}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"TList", " ", "=", " ", 
+    RowBox[{"List", "[", "SearchTerm", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MenList", "=", 
+   RowBox[{"AppendTo", "[", 
+    RowBox[{"PopupList", ",", 
+     RowBox[{
+      RowBox[{"GraphList", "[", "SearchTerm", "]"}], "\[Rule]", " ", 
+      "SearchTerm"}]}], "]"}]}], ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"GraphList", "[", "SearchTerm", "]"}], "=", "L"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TList", " ", "=", 
+   RowBox[{"AppendTo", "[", 
+    RowBox[{"TList", ",", "SearchTerm"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MenList", "=", 
+   RowBox[{"AppendTo", "[", 
+    RowBox[{"MenList", ",", 
+     RowBox[{
+      RowBox[{"GraphList", "[", "SearchTerm", "]"}], "\[Rule]", " ", 
+      "SearchTerm"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"PopupMenu", "[", 
+  RowBox[{
+   RowBox[{"Dynamic", "[", "SearchTerm", "]"}], ",", "TList"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PopupMenu", "[", 
+  RowBox[{
+   RowBox[{"Dynamic", "[", "L", "]"}], ",", "MenList"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6205750890063047`*^9, 3.620575090784082*^9}, {
+  3.620575379278618*^9, 3.620575381749851*^9}, {3.620575538631402*^9, 
+  3.620575541012548*^9}, {3.620575701366622*^9, 3.62057570643679*^9}, {
+  3.6205758961408043`*^9, 3.620575897541749*^9}, {3.620576009726284*^9, 
+  3.6205760228700733`*^9}, {3.62057680763072*^9, 3.62057682206907*^9}, {
+  3.620576937261044*^9, 3.6205769775497217`*^9}, {3.620577297421665*^9, 
+  3.620577298165453*^9}, {3.620577565063772*^9, 3.620577577453137*^9}}],
+
+Cell[BoxData[
+ PopupMenuBox[Dynamic[$CellContext`SearchTerm], {"#desk"->"\<\"#desk\"\>", 
+  "#phone"->"\<\"#phone\"\>", "#money"->"\<\"#money\"\>"}]], "Output",
+ CellChangeTimes->{
+  3.62057761533535*^9, {3.6205776819400387`*^9, 3.620577709036385*^9}, {
+   3.62057774371301*^9, 3.6205777604762707`*^9}, {3.620577838831298*^9, 
+   3.620577868641672*^9}}],
+
+Cell[BoxData[
+ PopupMenuBox[Dynamic[$CellContext`L], {"Null"->"\<\"drop\"\>", {
+  "#desk" -> "#office", "#office" -> "#spain"}->"\<\"#desk\"\>", {
+  "#phone" -> "#mobile", "#mobile" -> "#apple"}->"\<\"#phone\"\>", {
+  "#money" -> "#dogecoin", "#dogecoin" -> 
+   "#bitcoin"}->"\<\"#money\"\>"}]], "Output",
+ CellChangeTimes->{
+  3.62057761533535*^9, {3.6205776819400387`*^9, 3.620577709036385*^9}, {
+   3.62057774371301*^9, 3.6205777604762707`*^9}, {3.620577838831298*^9, 
+   3.620577868644719*^9}}]
+}, Open  ]]
 },
 WindowSize->{1022, 641},
-WindowMargins->{{296, Automatic}, {Automatic, 0}},
+WindowMargins->{{297, Automatic}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -905,9 +1023,15 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 27257, 712, 2596, "Input"],
-Cell[27839, 736, 6013, 150, 616, "Output"]
-}, {2}]]
+Cell[579, 22, 29347, 745, 2681, "Input"],
+Cell[29929, 769, 6108, 151, 344, "Output"]
+}, Open  ]],
+Cell[36052, 923, 942, 28, 165, "Input"],
+Cell[CellGroupData[{
+Cell[37019, 955, 1282, 30, 97, "Input"],
+Cell[38304, 987, 353, 6, 41, "Output"],
+Cell[38660, 995, 498, 9, 75, "Output"]
+}, Open  ]]
 }
 ]
 *)

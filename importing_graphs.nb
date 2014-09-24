@@ -1,0 +1,431 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     16877,        421]
+NotebookOptionsPosition[     15888,        382]
+NotebookOutlinePosition[     16265,        399]
+CellTagsIndexPosition[     16222,        396]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<test\>\"", ",", "L", ",", "\"\<List\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.620578719360757*^9, 3.620578773252553*^9}, {
+  3.620578826047689*^9, 3.620578832940525*^9}, {3.6205788769955482`*^9, 
+  3.6205789069242773`*^9}, {3.620579010101965*^9, 3.620579056524536*^9}, {
+  3.620579120854558*^9, 3.620579130486003*^9}, {3.6205791908219833`*^9, 
+  3.620579255860886*^9}}],
+
+Cell[BoxData["\<\"test\"\>"], "Output",
+ CellChangeTimes->{
+  3.620578833915819*^9, {3.6205788913132343`*^9, 3.620578902086934*^9}, {
+   3.6205790171690483`*^9, 3.620579021817605*^9}, 3.620579057377697*^9, 
+   3.6205792052370777`*^9, 3.620579257411838*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"F", " ", "=", 
+    RowBox[{"Import", "[", "\"\<test\>\"", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GList", "=", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"joined", "=", 
+      RowBox[{
+       RowBox[{"First", "[", 
+        RowBox[{"F", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], "]"}], "\[Rule]", 
+       RowBox[{"Last", "[", 
+        RowBox[{"F", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "F", "]"}]}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Graph", "[", "L", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Graph", "[", "GList", "]"}]}], "Input",
+ CellChangeTimes->{{3.620579274473382*^9, 3.6205792848848143`*^9}, {
+  3.620579359671688*^9, 3.6205793820055857`*^9}, {3.62057942745475*^9, 
+  3.620579649734232*^9}, {3.620579777201819*^9, 3.620579814254253*^9}, {
+  3.620579896847396*^9, 3.620580201980845*^9}, {3.62058023903017*^9, 
+  3.620580315501774*^9}, {3.62058034838127*^9, 3.620580350345593*^9}, {
+  3.620580381581321*^9, 3.6205807226542377`*^9}, {3.620580814752555*^9, 
+  3.620580819078821*^9}, {3.620580901456586*^9, 3.620581095109828*^9}, {
+  3.620581201487246*^9, 3.620581283373427*^9}, {3.620581315296674*^9, 
+  3.62058138378132*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"#cat\"\>", "\[Rule]", "\<\"#cats\"\>"}], ",", 
+   RowBox[{"\<\"#cat\"\>", "\[Rule]", "\<\"#gatti\"\>"}], ",", 
+   RowBox[{"\<\"#cat\"\>", "\[Rule]", "\<\"#catsoninternet\"\>"}], ",", 
+   RowBox[{"\<\"#cats\"\>", "\[Rule]", "\<\"#cat\"\>"}], ",", 
+   RowBox[{"\<\"#cats\"\>", "\[Rule]", "\<\"#gatti\"\>"}], ",", 
+   RowBox[{"\<\"#cats\"\>", "\[Rule]", "\<\"#catsoninternet\"\>"}], ",", 
+   RowBox[{"\<\"#gatti\"\>", "\[Rule]", "\<\"#cats\"\>"}], ",", 
+   RowBox[{"\<\"#gatti\"\>", "\[Rule]", "\<\"#cat\"\>"}], ",", 
+   RowBox[{"\<\"#gatti\"\>", "\[Rule]", "\<\"#catsoninternet\"\>"}], ",", 
+   RowBox[{"\<\"#catsoninternet\"\>", "\[Rule]", "\<\"#catsoninternet\"\>"}], 
+   ",", 
+   RowBox[{"\<\"#catsoninternet\"\>", "\[Rule]", "\<\"#gatti\"\>"}], ",", 
+   RowBox[{"\<\"#catsoninternet\"\>", "\[Rule]", "\<\"#cat\"\>"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.620579939491242*^9, 3.620580063030252*^9}, 
+   3.620580094010435*^9, {3.620580141389328*^9, 3.6205801690125237`*^9}, 
+   3.620580258697535*^9, 3.6205803180094013`*^9, 3.620580351701172*^9, 
+   3.6205804526021852`*^9, 3.620580506243678*^9, 3.6205807266272287`*^9, {
+   3.620580914280611*^9, 3.620581096207512*^9}, {3.620581177725209*^9, 
+   3.620581285376507*^9}, {3.620581318205608*^9, 3.620581384538548*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{
+      "#cat", "#cats", "#gatti", "#catsoninternet"}, {{{1, 2}, {1, 3}, {1, 
+       4}, {2, 1}, {2, 3}, {2, 4}, {3, 2}, {3, 1}, {3, 4}, {4, 4}, {4, 3}, {4,
+        1}}, Null}]], Typeset`boxes, Typeset`boxes$s2d = GraphicsGroupBox[{{
+       Arrowheads[0.04292550901359594], 
+       Directive[
+        Opacity[0.7], 
+        Hue[0.6, 0.7, 0.5]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], {
+          0.44368972433447124`, -0.1265945294308906}, 
+          DynamicLocation["VertexID$2", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], {
+          0.7306464069263563, 0.43848069560368075`}, 
+          DynamicLocation["VertexID$3", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], {
+          0.3042253632722715, 0.2993619830942069}, 
+          DynamicLocation["VertexID$4", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$2", Automatic, Center], {
+          0.4396496901884756, 0.1396033384206063}, 
+          DynamicLocation["VertexID$1", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$2", Automatic, Center], {
+          0.300051148752758, 0.5650752250345712}, 
+          DynamicLocation["VertexID$3", Automatic, Center]}]], 
+       ArrowBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$4", Automatic, Center]}], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], {
+          0.9962297352059446, 0.4427086025127412}, 
+          DynamicLocation["VertexID$1", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], {
+          0.5696745111783417, 0.30310526409213484`}, 
+          DynamicLocation["VertexID$2", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], {
+          0.43021015011614205`, 0.7290617766172323}, 
+          DynamicLocation["VertexID$4", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$4", Automatic, Center], {
+          0.5660195850898027, 0.5696264869041019}, 
+          DynamicLocation["VertexID$1", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$4", Automatic, Center], {
+          0.42642104365408484`, 0.9950983735180668}, 
+          DynamicLocation["VertexID$3", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation[
+          "VertexID$4", Automatic, Center], {-0.19637871319941733`, 
+          0.7807311668064901}, {-0.37835345158615863`, 
+          0.8788045045717624}, {-0.42852617973752893`, 
+          1.0096899591369612`}, {-0.16629933284967946`, 
+          1.2797792296314319`}, {-0.033989172860546535`, 
+          1.2334939573459618`}, {0.06941582263406251, 1.054495097299022}, 
+          DynamicLocation["VertexID$4", Automatic, Center]}, SplineDegree -> 
+         7]]}, {
+       Directive[
+        Hue[0.6, 0.2, 0.8], 
+        EdgeForm[
+         Directive[
+          GrayLevel[0], 
+          Opacity[0.7]]]], 
+       TagBox[
+        DiskBox[{0.870244948362074, 0.013008808989715681`}, 
+         0.011078218192649201`], "DynamicName", BoxID -> "VertexID$1"], 
+       TagBox[
+        DiskBox[{0.01309446616087273, 0.}, 0.011078218192649201`], 
+        "DynamicName", BoxID -> "VertexID$2"], 
+       TagBox[
+        DiskBox[{0.8566311937702268, 0.8681804891267061}, 
+         0.011078218192649201`], "DynamicName", BoxID -> "VertexID$3"], 
+       TagBox[
+        DiskBox[{0., 0.8559796610085931}, 0.011078218192649201`], 
+        "DynamicName", BoxID -> "VertexID$4"]}}], $CellContext`flag}, 
+    TagBox[
+     DynamicBox[GraphComputation`NetworkGraphicsBox[
+      3, Typeset`graph, Typeset`boxes, $CellContext`flag], {
+      CachedValue :> Typeset`boxes, SingleEvaluation -> True, 
+       SynchronousUpdating -> False, TrackedSymbols :> {$CellContext`flag}},
+      ImageSizeCache->{{3.7606933090100982`, 
+       355.2393066909899}, {-176.2393066909899, 171.2393066909899}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False,
+    UnsavedVariables:>{$CellContext`flag}]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{{3.620579939491242*^9, 3.620580063030252*^9}, 
+   3.620580094010435*^9, {3.620580141389328*^9, 3.6205801690125237`*^9}, 
+   3.620580258697535*^9, 3.6205803180094013`*^9, 3.620580351701172*^9, 
+   3.6205804526021852`*^9, 3.620580506243678*^9, 3.6205807266272287`*^9, {
+   3.620580914280611*^9, 3.620581096207512*^9}, {3.620581177725209*^9, 
+   3.620581285376507*^9}, {3.620581318205608*^9, 3.620581384585293*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{
+      "#cat", "#cats", "#gatti", "#catsoninternet"}, {{{1, 2}, {1, 3}, {1, 
+       4}, {2, 1}, {2, 3}, {2, 4}, {3, 2}, {3, 1}, {3, 4}, {4, 4}, {4, 3}, {4,
+        1}}, Null}]], Typeset`boxes, Typeset`boxes$s2d = GraphicsGroupBox[{{
+       Arrowheads[0.04292550901359594], 
+       Directive[
+        Opacity[0.7], 
+        Hue[0.6, 0.7, 0.5]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], {
+          0.44368972433447124`, -0.1265945294308906}, 
+          DynamicLocation["VertexID$2", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], {
+          0.7306464069263563, 0.43848069560368075`}, 
+          DynamicLocation["VertexID$3", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], {
+          0.3042253632722715, 0.2993619830942069}, 
+          DynamicLocation["VertexID$4", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$2", Automatic, Center], {
+          0.4396496901884756, 0.1396033384206063}, 
+          DynamicLocation["VertexID$1", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$2", Automatic, Center], {
+          0.300051148752758, 0.5650752250345712}, 
+          DynamicLocation["VertexID$3", Automatic, Center]}]], 
+       ArrowBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$4", Automatic, Center]}], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], {
+          0.9962297352059446, 0.4427086025127412}, 
+          DynamicLocation["VertexID$1", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], {
+          0.5696745111783417, 0.30310526409213484`}, 
+          DynamicLocation["VertexID$2", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], {
+          0.43021015011614205`, 0.7290617766172323}, 
+          DynamicLocation["VertexID$4", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$4", Automatic, Center], {
+          0.5660195850898027, 0.5696264869041019}, 
+          DynamicLocation["VertexID$1", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation["VertexID$4", Automatic, Center], {
+          0.42642104365408484`, 0.9950983735180668}, 
+          DynamicLocation["VertexID$3", Automatic, Center]}]], 
+       ArrowBox[
+        BezierCurveBox[{
+          DynamicLocation[
+          "VertexID$4", Automatic, Center], {-0.19637871319941733`, 
+          0.7807311668064901}, {-0.37835345158615863`, 
+          0.8788045045717624}, {-0.42852617973752893`, 
+          1.0096899591369612`}, {-0.16629933284967946`, 
+          1.2797792296314319`}, {-0.033989172860546535`, 
+          1.2334939573459618`}, {0.06941582263406251, 1.054495097299022}, 
+          DynamicLocation["VertexID$4", Automatic, Center]}, SplineDegree -> 
+         7]]}, {
+       Directive[
+        Hue[0.6, 0.2, 0.8], 
+        EdgeForm[
+         Directive[
+          GrayLevel[0], 
+          Opacity[0.7]]]], 
+       TagBox[
+        DiskBox[{0.870244948362074, 0.013008808989715681`}, 
+         0.011078218192649201`], "DynamicName", BoxID -> "VertexID$1"], 
+       TagBox[
+        DiskBox[{0.01309446616087273, 0.}, 0.011078218192649201`], 
+        "DynamicName", BoxID -> "VertexID$2"], 
+       TagBox[
+        DiskBox[{0.8566311937702268, 0.8681804891267061}, 
+         0.011078218192649201`], "DynamicName", BoxID -> "VertexID$3"], 
+       TagBox[
+        DiskBox[{0., 0.8559796610085931}, 0.011078218192649201`], 
+        "DynamicName", BoxID -> "VertexID$4"]}}], $CellContext`flag}, 
+    TagBox[
+     DynamicBox[GraphComputation`NetworkGraphicsBox[
+      3, Typeset`graph, Typeset`boxes, $CellContext`flag], {
+      CachedValue :> Typeset`boxes, SingleEvaluation -> True, 
+       SynchronousUpdating -> False, TrackedSymbols :> {$CellContext`flag}},
+      ImageSizeCache->{{3.7606933090100982`, 
+       355.2393066909899}, {-176.2393066909899, 171.2393066909899}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False,
+    UnsavedVariables:>{$CellContext`flag}]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{{3.620579939491242*^9, 3.620580063030252*^9}, 
+   3.620580094010435*^9, {3.620580141389328*^9, 3.6205801690125237`*^9}, 
+   3.620580258697535*^9, 3.6205803180094013`*^9, 3.620580351701172*^9, 
+   3.6205804526021852`*^9, 3.620580506243678*^9, 3.6205807266272287`*^9, {
+   3.620580914280611*^9, 3.620581096207512*^9}, {3.620581177725209*^9, 
+   3.620581285376507*^9}, {3.620581318205608*^9, 3.62058138460151*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"First", "[", 
+   RowBox[{"F", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[Rule]", 
+  RowBox[{"Last", "[", 
+   RowBox[{"F", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], "]"}]}]], "Input",
+ FontWeight->"Plain"],
+
+Cell[BoxData[
+ RowBox[{"\<\"#cat\"\>", "\[Rule]", "\<\"#cats\"\>"}]], "Output",
+ CellChangeTimes->{3.620581253045658*^9}]
+}, Open  ]],
+
+Cell[BoxData["."], "Input",
+ CellChangeTimes->{3.62057936660736*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Print", "[", "i", "]"}], ";"}], "\[IndentingNewLine]", ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "2", ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.620580830580373*^9, 3.6205808446372557`*^9}, {
+  3.6205808857189703`*^9, 3.620580897845683*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{{3.620580887475322*^9, 3.620580898816599*^9}}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{{3.620580887475322*^9, 3.620580898817985*^9}}],
+
+Cell[BoxData["4"], "Print",
+ CellChangeTimes->{{3.620580887475322*^9, 3.620580898819556*^9}}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{{3.620580887475322*^9, 3.620580898820468*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Null", ",", "Null", ",", "Null", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.620580845232379*^9, {3.620580887498528*^9, 3.620580898821485*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{28, Automatic}, {Automatic, 64}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 428, 7, 28, "Input"],
+Cell[1010, 31, 256, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1303, 40, 1449, 33, 148, "Input"],
+Cell[2755, 75, 1330, 22, 80, "Output"],
+Cell[4088, 99, 5145, 112, 370, "Output"],
+Cell[9236, 213, 5144, 112, 404, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14417, 330, 248, 8, 28, "Input"],
+Cell[14668, 340, 121, 2, 28, "Output"]
+}, Open  ]],
+Cell[14804, 345, 68, 1, 28, "Input"],
+Cell[CellGroupData[{
+Cell[14897, 350, 358, 8, 63, "Input"],
+Cell[CellGroupData[{
+Cell[15280, 362, 93, 1, 21, "Print"],
+Cell[15376, 365, 93, 1, 21, "Print"],
+Cell[15472, 368, 93, 1, 21, "Print"],
+Cell[15568, 371, 93, 1, 21, "Print"]
+}, Open  ]],
+Cell[15676, 375, 196, 4, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
