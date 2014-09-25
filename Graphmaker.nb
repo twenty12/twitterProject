@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      2920,         95]
-NotebookOptionsPosition[      2485,         74]
-NotebookOutlinePosition[      2842,         90]
-CellTagsIndexPosition[      2799,         87]
+NotebookDataLength[      4951,        137]
+NotebookOptionsPosition[      4501,        117]
+NotebookOutlinePosition[      4858,        133]
+CellTagsIndexPosition[      4815,        130]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,16 +21,22 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell[BoxData[{
- RowBox[{"namelist", "=", 
-  RowBox[{"{", 
-   RowBox[{"\"\<#putin\>\"", ",", "\"\<#obama\>\""}], 
-   "}"}]}], "\[IndentingNewLine]", 
- RowBox[{"Do", "[", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"namelist", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<putin\>\"", ",", "\"\<obama\>\"", ",", "\"\<francis\>\"", ",", 
+     "\"\<merkel\>\"", ",", "\"\<gates\>\"", ",", "\"\<bernanke\>\"", ",", 
+     "\"\<Abdullah\>\"", ",", "\"\<draghi\>\"", ",", "\"\<Michael%20Dule\>\"",
+      ",", "\"\<Helu\>\"", ",", "\"\<Buffett\>\"", ",", "\"\<Kequiang\>\""}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"Crawl", "[", 
-     RowBox[{"namelist", "[", 
-      RowBox[{"[", "i", "]"}], "]"}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"\"\<#\>\"", "<>", 
+      RowBox[{"namelist", "[", 
+       RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
     RowBox[{"Export", "[", 
      RowBox[{
       RowBox[{
@@ -46,34 +52,71 @@ Cell[BoxData[{
            RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
        "]"}], ",", "\"\<List\>\""}], "]"}]}], ",", 
    RowBox[{"{", 
-    RowBox[{"i", ",", "2"}], "}"}]}], "]"}]}], "Input",
+    RowBox[{"i", ",", 
+     RowBox[{"Length", "[", "namelist", "]"}]}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.620581512949965*^9, 3.620581573157346*^9}, {
    3.620581853441581*^9, 3.6205823194710503`*^9}, 3.620582635975375*^9, {
-   3.620582697047908*^9, 3.620582701415256*^9}, 3.620582744889022*^9}],
+   3.620582697047908*^9, 3.620582701415256*^9}, 3.620582744889022*^9, 
+   3.620583241994948*^9, {3.62058329560114*^9, 3.620583319559292*^9}, {
+   3.620583359215661*^9, 3.6205833745938168`*^9}, {3.6205834413833313`*^9, 
+   3.6205835162636757`*^9}, {3.620583555065424*^9, 3.6205836476344233`*^9}}],
 
 Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"\<\"#putin\"\>", ",", "\<\"#obama\"\>"}], "}"}]], "Output",
- CellChangeTimes->{{3.620582208041039*^9, 3.620582281130308*^9}, 
-   3.620582327678541*^9, 3.620582409151771*^9, 3.6205826435262136`*^9, 
-   3.6205827039184237`*^9, 3.6205827767083406`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
+ RowBox[{
+  StyleBox[
+   RowBox[{"Take", "::", "take"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot take positions \[NoBreak]\\!\\(2\\)\[NoBreak] \
+through \[NoBreak]\\!\\(2\\)\[NoBreak] in \
+\[NoBreak]\\!\\({\\\"#Michael%20Dule\\\"}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\
+\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Take/take\\\", ButtonNote -> \
+\\\"Take::take\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.620588341721958*^9}],
 
 Cell[BoxData[
- RowBox[{"\"\</danielgladstone/documents/twitter_project/graph\>\"", "<>", 
-  RowBox[{"namelist", "[", 
-   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.620582620438946*^9, 3.620582629997583*^9}}],
+ RowBox[{
+  StyleBox[
+   RowBox[{"Take", "::", "take"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot take positions \[NoBreak]\\!\\(3\\)\[NoBreak] \
+through \[NoBreak]\\!\\(3\\)\[NoBreak] in \
+\[NoBreak]\\!\\({\\\"#Michael%20Dule\\\"}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\
+\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Take/take\\\", ButtonNote -> \
+\\\"Take::take\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6205883420091467`*^9}],
 
-Cell[BoxData["\<\"/danielgladstone/documents/twitter_project/graph#putin\"\>"]\
-, "Output",
- CellChangeTimes->{3.620582630790537*^9}]
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Take", "::", "take"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot take positions \[NoBreak]\\!\\(4\\)\[NoBreak] \
+through \[NoBreak]\\!\\(4\\)\[NoBreak] in \
+\[NoBreak]\\!\\({\\\"#Michael%20Dule\\\"}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\
+\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Take/take\\\", ButtonNote -> \
+\\\"Take::take\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.620588342309331*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(Take :: \
+take\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6205883423520813`*^9}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
-WindowMargins->{{338, Automatic}, {34, Automatic}},
+WindowMargins->{{411, Automatic}, {Automatic, 37}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -90,16 +133,14 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 1195, 29, 131, "Input"],
-Cell[1777, 53, 289, 5, 28, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2103, 63, 230, 4, 28, "Input"],
-Cell[2336, 69, 133, 2, 28, "Output"]
+Cell[579, 22, 1788, 40, 148, "Input"],
+Cell[2370, 64, 525, 11, 24, "Message"],
+Cell[2898, 77, 527, 11, 24, "Message"],
+Cell[3428, 90, 525, 11, 24, "Message"],
+Cell[3956, 103, 529, 11, 24, "Message"]
 }, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-

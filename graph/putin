@@ -1,0 +1,8 @@
+"#putin" -> "#russia"
+"#putin" -> "#ukraine"
+"#russia" -> "#ukraine"
+"#russia" -> "#nato"
+"#ukraine" -> "#russia"
+"#ukraine" -> "#nato"
+"#nato" -> "#ukraine"
+"#nato" -> "#russia"
