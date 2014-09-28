@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     23971,        613]
-NotebookOptionsPosition[     23387,        590]
-NotebookOutlinePosition[     23744,        606]
-CellTagsIndexPosition[     23701,        603]
+NotebookDataLength[     23137,        602]
+NotebookOptionsPosition[     22554,        579]
+NotebookOutlinePosition[     22911,        595]
+CellTagsIndexPosition[     22868,        592]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -495,58 +495,47 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{
-  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
    RowBox[{
-    RowBox[{
-     RowBox[{"Crawl", "[", 
-      RowBox[{"\"\<#\>\"", "<>", 
-       RowBox[{"namelist", "[", 
-        RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"Export", "[", 
-      RowBox[{
+    RowBox[{"Crawl", "[", 
+     RowBox[{"\"\<#\>\"", "<>", 
+      RowBox[{"StringReplace", "[", 
        RowBox[{
-       "\"\<//Users/danielgladstone/Documents/twitter_project/graph/\>\"", "<>", 
-        RowBox[{"StringReplace", "[", 
+        RowBox[{"namelist", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], ",", 
+        RowBox[{"\"\< \>\"", "\[Rule]", "\"\<%20\>\""}]}], "]"}]}], "]"}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"Export", "[", 
+     RowBox[{
+      RowBox[{
+      "\"\<//Users/danielgladstone/Documents/twitter_project/graph/\>\"", "<>", 
+       RowBox[{"namelist", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], ",", 
+      RowBox[{"DeleteDuplicates", "[", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"Drop", "[", 
          RowBox[{
-          RowBox[{"namelist", "[", 
-           RowBox[{"[", "i", "]"}], "]"}], ",", 
-          RowBox[{"\"\< \>\"", "\[Rule]", "\"\<%20\>\""}]}], "]"}]}], ",", 
-       RowBox[{"DeleteDuplicates", "[", 
-        RowBox[{"Flatten", "[", 
-         RowBox[{"Drop", "[", 
           RowBox[{
-           RowBox[{
-            RowBox[{"Branch", "[", "HT", "]"}], "[", 
-            RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
-        "]"}], ",", "\"\<List\>\""}], "]"}]}], ",", 
-    RowBox[{"{", 
-     RowBox[{"i", ",", 
-      RowBox[{"Length", "[", "namelist", "]"}]}], "}"}]}], "]"}], 
-  "\[IndentingNewLine]"}]], "Input",
- CellChangeTimes->{{3.620581512949965*^9, 3.620581573157346*^9}, {
-   3.620581853441581*^9, 3.6205823194710503`*^9}, 3.620582635975375*^9, {
-   3.620582697047908*^9, 3.620582701415256*^9}, 3.620582744889022*^9, 
-   3.620583241994948*^9, {3.62058329560114*^9, 3.620583319559292*^9}, {
-   3.620583359215661*^9, 3.6205833745938168`*^9}, {3.6205834413833313`*^9, 
-   3.6205835162636757`*^9}, {3.620583555065424*^9, 3.6205836476344233`*^9}, 
-   3.620850879970742*^9, {3.620850919233768*^9, 3.620850938312559*^9}, {
-   3.620851269312331*^9, 3.620851271048251*^9}, {3.620851341672366*^9, 
-   3.6208513712006073`*^9}, {3.620851594653687*^9, 3.620851627200693*^9}, {
-   3.6208540897850637`*^9, 3.620854105079485*^9}, {3.620854142698765*^9, 
-   3.6208541867038307`*^9}, 3.6208542197376966`*^9}],
+           RowBox[{"Branch", "[", "HT", "]"}], "[", 
+           RowBox[{"searches", "+", "1"}], "]"}], ",", "1"}], "]"}], "]"}], 
+       "]"}], ",", "\"\<List\>\""}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", 
+     RowBox[{"Length", "[", "namelist", "]"}]}], "}"}]}], "]"}]], "Input"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Take", "::", "take"}], "MessageName"], ":", 
-  " ", "\<\"Cannot take positions \[NoBreak]\\!\\(2\\)\[NoBreak] through \
-\[NoBreak]\\!\\(2\\)\[NoBreak] in \
-\[NoBreak]\\!\\({\\\"#Michael%20Dule\\\"}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\
+   RowBox[{"Take", "::", "take"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot take positions \[NoBreak]\\!\\(2\\)\[NoBreak] \
+through \[NoBreak]\\!\\(2\\)\[NoBreak] in \
+\[NoBreak]\\!\\({\\\"#Ben%20Bernanke\\\"}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\
 \"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/Take/take\\\", ButtonNote -> \
 \\\"Take::take\\\"]\\)\"\>"}]], "Message", "MSG",
- CellChangeTimes->{3.620588341721958*^9}],
+ CellChangeTimes->{3.6208586299166927`*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -555,11 +544,11 @@ Cell[BoxData[
   RowBox[{
   ":", " "}], "\<\"Cannot take positions \[NoBreak]\\!\\(3\\)\[NoBreak] \
 through \[NoBreak]\\!\\(3\\)\[NoBreak] in \
-\[NoBreak]\\!\\({\\\"#Michael%20Dule\\\"}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\
+\[NoBreak]\\!\\({\\\"#Ben%20Bernanke\\\"}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\
 \"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/Take/take\\\", ButtonNote -> \
 \\\"Take::take\\\"]\\)\"\>"}]], "Message", "MSG",
- CellChangeTimes->{3.6205883420091467`*^9}],
+ CellChangeTimes->{3.6208586301974497`*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -568,11 +557,11 @@ Cell[BoxData[
   RowBox[{
   ":", " "}], "\<\"Cannot take positions \[NoBreak]\\!\\(4\\)\[NoBreak] \
 through \[NoBreak]\\!\\(4\\)\[NoBreak] in \
-\[NoBreak]\\!\\({\\\"#Michael%20Dule\\\"}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\
+\[NoBreak]\\!\\({\\\"#Ben%20Bernanke\\\"}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\
 \"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/Take/take\\\", ButtonNote -> \
 \\\"Take::take\\\"]\\)\"\>"}]], "Message", "MSG",
- CellChangeTimes->{3.620588342309331*^9}],
+ CellChangeTimes->{3.6208586304961452`*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -585,7 +574,7 @@ calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
 \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
- CellChangeTimes->{3.6205883423520813`*^9}]
+ CellChangeTimes->{3.620858630544793*^9}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
@@ -609,11 +598,11 @@ Cell[557, 20, 10920, 286, 1151, "Input"],
 Cell[11480, 308, 347, 8, 63, "Input"],
 Cell[11830, 318, 7525, 174, 471, "Input"],
 Cell[CellGroupData[{
-Cell[19380, 496, 1886, 40, 131, "Input"],
-Cell[21269, 538, 512, 10, 24, "Message"],
-Cell[21784, 550, 527, 11, 24, "Message"],
-Cell[22314, 563, 525, 11, 24, "Message"],
-Cell[22842, 576, 529, 11, 24, "Message"]
+Cell[19380, 496, 1038, 28, 97, "Input"],
+Cell[20421, 526, 527, 11, 24, "Message"],
+Cell[20951, 539, 527, 11, 24, "Message"],
+Cell[21481, 552, 527, 11, 24, "Message"],
+Cell[22011, 565, 527, 11, 24, "Message"]
 }, Open  ]]
 }
 ]
