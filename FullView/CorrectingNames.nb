@@ -1,0 +1,148 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4585,        139]
+NotebookOptionsPosition[      4049,        114]
+NotebookOutlinePosition[      4428,        131]
+CellTagsIndexPosition[      4385,        128]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Made this to correct the names which i mistakenly exported.\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.622561748457728*^9, 3.622561762936185*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"TagList", " ", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\<#boston\>\"", ",", "\"\<#bostonmarathon\>\"", ",", 
+    "\"\<#bostonstrong\>\"", ",", "\"\<#prayforboston\>\""}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"T", "=", 
+     RowBox[{"TagList", "[", 
+      RowBox[{"[", "n", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Do", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Clear", "[", 
+        RowBox[{"file", ",", "file2"}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"file", "=", 
+        RowBox[{
+        "\"\<//Users/danielgladstone/Documents/twitter_project/FullView/\>\"",
+          "<>", "T", "<>", "\"\</\>\"", "<>", 
+         RowBox[{"ToString", "[", 
+          RowBox[{"{", 
+           RowBox[{"2013", ",", "4", ",", "8", ",", 
+            RowBox[{"(", 
+             RowBox[{"i", "-", "1"}], ")"}], ",", "0", ",", "0"}], "}"}], 
+          "]"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"FileExistsQ", "[", "file", "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"file2", "=", 
+           RowBox[{
+           "\"\<//Users/danielgladstone/Documents/twitter_project/FullView/\>\
+\"", "<>", "T", "<>", "\"\</\>\"", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"DateList", "[", 
+              RowBox[{"{", 
+               RowBox[{"2013", ",", "4", ",", "8", ",", 
+                RowBox[{"(", 
+                 RowBox[{"i", "-", "1"}], ")"}], ",", "0", ",", "0"}], "}"}], 
+              "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"RenameFile", "[", 
+           RowBox[{"file", ",", "file2"}], "]"}], ";"}], ",", 
+         RowBox[{"Continue", "[", "]"}]}], "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "504"}], "}"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "4"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.622506595820223*^9, 3.622506678674366*^9}, {
+   3.622506880356791*^9, 3.622506984892971*^9}, {3.622507017693267*^9, 
+   3.622507080220634*^9}, 3.622507159526082*^9, {3.6225071903723707`*^9, 
+   3.622507222916729*^9}, {3.62250725701257*^9, 3.622507267326085*^9}, {
+   3.622507304301201*^9, 3.622507305565065*^9}, {3.622507866326375*^9, 
+   3.6225079596845627`*^9}, {3.622508007408052*^9, 3.622508044820777*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"#boston\"\>", ",", "\<\"#bostonmarathon\"\>", 
+   ",", "\<\"#bostonstrong\"\>", ",", "\<\"#prayforboston\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.622507967159433*^9, {3.622508030080413*^9, 3.622508045771617*^9}, 
+   3.622509002713833*^9, 3.6225439359288397`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateString", "[", 
+  RowBox[{"{", 
+   RowBox[{"2013", ",", "4", ",", "8", ",", "100", ",", "30", ",", "0"}], 
+   "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.622506797856112*^9, 3.6225068256821957`*^9}, {
+  3.622508937218732*^9, 3.622508944487072*^9}}],
+
+Cell[BoxData["\<\"Fri 12 Apr 2013 04:30:00\"\>"], "Output",
+ CellChangeTimes->{
+  3.6225068264477777`*^9, {3.622508938070758*^9, 3.62250894525453*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+Evaluator->"Local",
+WindowSize->{859, 305},
+WindowMargins->{{Automatic, -932}, {Automatic, 122}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 158, 3, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[762, 29, 2470, 57, 216, "Input"],
+Cell[3235, 88, 318, 7, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3590, 100, 277, 6, 28, "Input"],
+Cell[3870, 108, 151, 2, 28, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
