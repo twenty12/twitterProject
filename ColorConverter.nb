@@ -1,0 +1,92 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2288,         82]
+NotebookOptionsPosition[      1923,         64]
+NotebookOutlinePosition[      2280,         80]
+CellTagsIndexPosition[      2237,         77]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hexToRGB", "=", 
+   RowBox[{
+    RowBox[{"RGBColor", "@@", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"IntegerDigits", "[", 
+        RowBox[{
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"StringReplace", "[", 
+           RowBox[{"#", ",", 
+            RowBox[{"\"\<#\>\"", "\[Rule]", "\"\<16^^\>\""}]}], "]"}]}], ",", 
+         "256", ",", "3"}], "]"}], "/", "255."}], ")"}]}], "&"}]}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{"hexToRGB", "[", "\"\<#FF8000\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"1.", ",", "0.501961", ",", "0."}], "]"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.6227254399557447`*^9, 3.622725439963463*^9}},
+ FontWeight->"Plain"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RGBColor", "@@", 
+   FractionBox[
+    RowBox[{"IntegerDigits", "[", 
+     RowBox[{
+      RowBox[{"ToExpression", "[", 
+       RowBox[{"StringReplace", "[", 
+        RowBox[{"#1", ",", 
+         RowBox[{"\<\"#\"\>", "\[Rule]", "\<\"16^^\"\>"}]}], "]"}], "]"}], 
+      ",", "256", ",", "3"}], "]"}], "255.`"]}], "&"}]], "Output",
+ CellChangeTimes->{3.622725441339047*^9}],
+
+Cell[BoxData[
+ RowBox[{"RGBColor", "[", 
+  RowBox[{"1.`", ",", "0.5019607843137255`", ",", "0.`"}], "]"}]], "Output",
+ CellChangeTimes->{3.6227254413400803`*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 401}, {Automatic, 67}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 757, 21, 114, "Input"],
+Cell[1339, 45, 404, 11, 48, "Output"],
+Cell[1746, 58, 161, 3, 62, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
